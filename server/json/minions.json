@@ -1,0 +1,37 @@
+{
+    "OcchioGiallo":{
+        "nome":"Occhio Giallo",
+        "regHp":0.1,
+        "hp":100,
+        "damage":5,
+        "defence":3,
+        "atkSpd":10,
+        "timeToAttack":25,
+        "timeToSuperAttack":1000,
+        "numShotSuperAttack":3,
+        "bulletSpeed":10,
+        "bulletTimeToRemove":30,
+        "bulletImgSrc":"client/img/items/bullet.png",
+        "bulletFrWidth":1,
+        "bulletFrHeight":1,
+        "bulletRatio":1,
+        "bulletAnimationSpeed":0,
+        "range":200,
+        "speed":5,
+
+        "timeLife": 2000,
+
+        "animation":{
+            "img":"client/img/Minion/OcchioGiallo.png",
+            "up":3,
+            "left":1,
+            "down":0,
+            "right":2,
+            "animationSpeed":0.2,
+            "numFrameWidth":3,
+            "numFrameHeight":4,
+            "ratio":1,
+            "idle":"continue"
+        }
+    }
+}

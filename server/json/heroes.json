@@ -1,0 +1,107 @@
+{
+    "Iniziale":{
+        "hp": 100,
+        "mp": 100,
+        "damage": 1,
+        "defence": 0,
+        "maxSpd": 5, 
+        "atkSpd": 10, 
+        "animationSpeed": 0.2,
+        "animation":{
+            "img":"client/img/pg/Iniziale.png",
+            "up":0,
+            "left":1,
+            "down":2,
+            "right":3,
+            "animationSpeed":0.2,
+            "numFrameWidth":3,
+            "numFrameHeight":4,
+            "ratio":2,
+            "idle":1
+        }
+    },
+    "Mago":{
+        "animation":{
+            "img":"client/img/pg/Mago.png",
+            "up":3,
+            "left":1,
+            "down":0,
+            "right":2,
+            "animationSpeed":0.2,
+            "numFrameWidth":3,
+            "numFrameHeight":4,
+            "ratio":1.2,
+            "idle":1
+        }
+    },
+    "Assassino":{
+        "animation":{
+            "img":"client/img/pg/Assassino.png",
+            "up":3,
+            "left":1,
+            "down":0,
+            "right":2,
+            "animationSpeed":0.2,
+            "numFrameWidth":3,
+            "numFrameHeight":4,
+            "ratio":1.2,
+            "idle":1
+        }
+    },
+    "Evocatore":{
+        "animation":{
+            "img":"client/img/pg/Evocatore.png",
+            "up":3,
+            "left":1,
+            "down":0,
+            "right":2,
+            "animationSpeed":0.2,
+            "numFrameWidth":3,
+            "numFrameHeight":4,
+            "ratio":1.2,
+            "idle":1
+        }
+    },
+    "Cavaliere":{
+        "animation":{
+            "img":"client/img/pg/Cavaliere.png",
+            "up":3,
+            "left":1,
+            "down":0,
+            "right":2,
+            "animationSpeed":0.2,
+            "numFrameWidth":3,
+            "numFrameHeight":4,
+            "ratio":1.2,
+            "idle":1
+        }
+    },
+    "Incantatrice":{
+        "animation":{
+            "img":"client/img/pg/Incantatrice.png",
+            "up":3,
+            "left":1,
+            "down":0,
+            "right":2,
+            "animationSpeed":0.2,
+            "numFrameWidth":3,
+            "numFrameHeight":4,
+            "ratio":1.2,
+            "idle":1
+        }
+    },
+    "Ninja":{
+        "animation":{
+            "img":"client/img/pg/Ninja.png",
+            "up":3,
+            "left":1,
+            "down":0,
+            "right":2,
+            "animationSpeed":0.2,
+            "numFrameWidth":3,
+            "numFrameHeight":4,
+            "ratio":1.2,
+            "idle":1
+        }
+    }
+}

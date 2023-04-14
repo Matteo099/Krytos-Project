@@ -1,0 +1,101 @@
+{
+    "Acido":{
+        "nome": "Acido",
+        "timeToReuse": 1000,
+        "imgInv":"client/img/pet/Skill/Singola/Acido.png",
+        "timeEffect": 0,
+        "numeroColpi": 1,
+        "ratio": 1,
+        "range": 200,
+        "livello": 0,
+        "bonus": {"damage": 8, "defence": 0, "hp": 0, "mp": 0, "regMp":0, "regHp":0},
+        
+        "option":{
+            "_x":0,
+            "_y":-180,
+            "type":"enemy_collision"
+        },
+
+        "animation": {
+            "img": "client/img/pet/Skill/Acido.png",
+            "frWidth": 5,
+            "frHeight": 3,
+            "animationSpeed": 0.6,
+            "loop": 1
+        },
+        "function": {
+            "arguments":"data",
+            "body":"for(var i in data.sk.targets){var t = data.sk.targets[i];var dam = data.sk.bonus.damage+data.parent.damage; if(t.defence > dam){t.hp -= 0.05;CanvasText({msg:'-0.05', map:t.map, color:'red', x:t.x, y:t.y, entity:t});}else{t.hp+=(t.defence-dam);CanvasText({msg:t.defence-dam, map:t.map, color:'red', x:t.x, y:t.y, entity:t});}if(t.hp <= 0){t.onDeath(data.petParent);} }"},
+
+        "miglioramenti":{
+            "1":{
+                "monete": 10,
+                "gemme": 1,
+                "items": [
+                    {"nome":"Libro1", "quantita":1}
+                ],
+                "esperienza": 10,
+
+                "timeToReuse": 380,
+                "timeEffect": 0,
+                "numeroColpi": 2,
+                "range": 300,
+                "ratio": 1,
+                "bonus": {"damage": 13, "defence": 0, "hp": 0, "mp": 0, "regMp":0, "regHp":0}
+            }
+        },
+
+        "commento":"Acido",
+        "spiegazione":"Sprigiona dell\\'acido intorno al pet"
+    },
+
+    "Esplosione":{
+        "nome": "Esplosione",
+        "timeToReuse": 1000,
+        "imgInv":"client/img/pet/Skill/Singola/Esplosione.png",
+        "timeEffect": 0,
+        "numeroColpi": 1,
+        "ratio": 1,
+        "range": 200,
+        "livello": 0,
+        "bonus": {"damage": 8, "defence": 0, "hp": 0, "mp": 0, "regMp":0, "regHp":0},
+        
+        "option":{
+            "_x":0,
+            "_y":-180,
+            "type":"enemy_collision"
+        },
+
+        "animation": {
+            "img": "client/img/pet/Skill/Esplosione.png",
+            "frWidth": 8,
+            "frHeight": 4,
+            "animationSpeed": 0.8,
+            "loop": 1
+        },
+        "function": {
+            "arguments":"data",
+            "body":"for(var i in data.sk.targets){var t = data.sk.targets[i];var dam = data.sk.bonus.damage+data.parent.damage; if(t.defence > dam){t.hp -= 0.05;CanvasText({msg:'-0.05', map:t.map, color:'red', x:t.x, y:t.y, entity:t});}else{t.hp+=(t.defence-dam);CanvasText({msg:t.defence-dam, map:t.map, color:'red', x:t.x, y:t.y, entity:t});}if(t.hp <= 0){t.onDeath(data.petParent);} }"},
+
+        "miglioramenti":{
+            "1":{
+                "monete": 10,
+                "gemme": 1,
+                "items": [
+                    {"nome":"Libro1", "quantita":1}
+                ],
+                "esperienza": 10,
+
+                "timeToReuse": 380,
+                "timeEffect": 0,
+                "numeroColpi": 2,
+                "range": 300,
+                "ratio": 1,
+                "bonus": {"damage": 13, "defence": 0, "hp": 0, "mp": 0, "regMp":0, "regHp":0}
+            }
+        },
+
+        "commento":"Esplosione",
+        "spiegazione":"Crea un\\'esplosione"
+    }
+}

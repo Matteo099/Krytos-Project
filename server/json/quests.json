@@ -1,0 +1,78 @@
+{
+    "commento":{
+        "Livello 1":"quest Object"
+    },
+
+
+    "1":{
+        "nome": "Missione 1",
+        "spiegazione": "Devi uccidere 5 Api",
+        "ricompensa":{
+            "items":[
+                {"nome":"PozioneHP", "quantita":10},
+                {"nome":"SpadaIniziale", "quantita":1}
+            ],
+            "monete": 5,
+            "gemme": 0,
+            "esperienza": 10
+        },
+        "obbiettivo":{
+            "enemys":[{"nome":"Ape", "quantita":5}],
+            "items":[]
+        }
+    },
+
+    "3":{
+        "nome": "Missione 2",
+        "spiegazione": "Devi uccidere 5 Pipistrelli",
+        "ricompensa":{
+            "items":[
+                {"nome":"PozioneHP", "quantita":20}
+            ],
+            "monete": 10,
+            "gemme": 1,
+            "esperienza": 10
+        },
+        "obbiettivo":{
+            "enemys":[{"nome":"Pipistrello", "quantita":5}],
+            "items":[]
+        }
+    },
+
+    "5":{
+        "nome": "Missione 3",
+        "spiegazione": "Devi uccidere 1 Ape Gigante e consegnare 200 Pozione Rigenerazione HP",
+        "ricompensa":{
+            "items":[
+                {"nome":"Magician", "quantita":1},
+                {"nome":"Knight", "quantita":1},
+                {"nome":"Charmer", "quantita":1},
+                {"nome":"Summoner", "quantita":1},
+                {"nome":"Murderess", "quantita":1},
+                {"nome":"Ninja", "quantita":1}
+            ],
+            "monete": 0,
+            "gemme": 0,
+            "esperienza": 0
+        },
+        "obbiettivo":{
+            "enemys":[{"nome":"ApeGigante", "quantita":1}],
+            "items":[{"nome":"PozioneRegHP", "quantita":200}]
+        }
+    },
+
+    "8":{
+        "nome": "Missione 4",
+        "spiegazione": "Devi uccidere 10 Pipistrelli Blu e 1 Pipistrello Boss",
+        "ricompensa":{
+            "items":[],
+            "monete": 50,
+            "gemme": 5,
+            "esperienza": 50
+        },
+        "obbiettivo":{
+            "enemys":[{"nome":"PipistrelloBlu", "quantita":10}, {"nome":"PipistrelloBoss", "quantita":1}],
+            "items":[]
+        }
+    }
+}

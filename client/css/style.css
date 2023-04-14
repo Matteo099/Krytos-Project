@@ -1,0 +1,831 @@
+@import url('https://fonts.googleapis.com/css?family=Hanalei+Fill');
+@import url('https://fonts.googleapis.com/css?family=Rancho');
+
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    overflow-y: scroll;
+    margin: 0px;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  body {
+    margin: 0px;
+    background: #c1bdba;
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #1ab188;
+    transition: .5s ease;
+  }
+  a:hover {
+    color: #179b77;
+  }
+  
+  .form {
+    background: rgba(19, 35, 47, 0.9);
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  }
+  
+  .tab-group {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+  }
+  .tab-group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .tab-group li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    background: rgba(160, 179, 176, 0.25);
+    color: #a0b3b0;
+    font-size: 20px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease;
+  }
+  .tab-group li a:hover {
+    background: #179b77;
+    color: #ffffff;
+  }
+  .tab-group .active a {
+    background: #1ab188;
+    color: #ffffff;
+  }
+  
+  .tab-content > div:last-child {
+    display: none;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0 0 40px;
+  }
+  
+  label {
+    position: absolute;
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+    left: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
+    backface-visibility: hidden;
+    pointer-events: none;
+    font-size: 22px;
+  }
+  label .req {
+    margin: 2px;
+    color: #1ab188;
+  }
+  
+  label.active {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    left: 2px;
+    font-size: 14px;
+  }
+  label.active .req {
+    opacity: 0;
+  }
+  
+  label.highlight {
+    color: #ffffff;
+  }
+  
+  input, textarea {
+    font-size: 22px;
+    display: block;
+    /*width: 100%;
+    height: 100%;*/
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #a0b3b0;
+    color: #ffffff;
+    border-radius: 0;
+    transition: border-color .25s ease, box-shadow .25s ease;
+  }
+  input:focus, textarea:focus {
+    outline: 0;
+    border-color: #1ab188;
+  }
+  
+  textarea {
+    border: 2px solid #a0b3b0;
+    resize: vertical;
+  }
+  
+  .field-wrap {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .top-row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .top-row > div {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+  }
+  .top-row > div:last-child {
+    margin: 0;
+  }
+  
+  .button {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 15px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: #1ab188;
+    color: #ffffff;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+  }
+  .button:hover, .button:focus {
+    background: #179b77;
+  }
+  
+  .button-block {
+    display: block;
+    width: 100%;
+  }
+  
+  .forgot {
+    margin-top: -20px;
+    text-align: right;
+  }
+  
+  .x64{
+    width:64px;
+    height:64px;
+    margin:0 auto;
+  }
+  .x86{
+    width:86px;
+    height:86px;
+    margin:0 auto;
+  }
+
+  .inv-block{
+    border: 10px solid transparent;
+    padding: 1px;
+    margin:3px;
+    -webkit-border-image: url(cornice.png) 30 round; /* Safari 3.1-5 */
+    -o-border-image: url(cornice.png) 30 round; /* Opera 11-12.1 */
+    border-image: url(cornice.png) 30 round;
+    background-color: white;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.9+0,0.35+100 */
+    background: -moz-linear-gradient(45deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.35) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#59000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+  .inventory-tab{
+    user-select: none;
+    -moz-user-select: none;
+    
+    padding: 5px;
+    border: 3px solid black;
+    border-radius: 3px;
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e4f7+0,73b1e7+24,0a77d5+50,539fe1+79,87bcea+100;Blue+Pipe+%231 */
+    background: rgb(208,228,247); /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(208,228,247,1) 0%, rgba(115,177,231,1) 24%, rgba(10,119,213,1) 50%, rgba(83,159,225,1) 79%, rgba(135,188,234,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    
+    -webkit-box-shadow: inset 0px 0px 10px 4px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 0px 10px 4px rgba(0,0,0,1);  
+    box-shadow: inset 0px 0px 10px 4px rgba(0,0,0,1);
+
+    border-collapse: separate;
+    border-spacing: 5px;
+  }
+
+  .inline{
+    display: inline-table;
+  }
+
+  #vendi{
+    border: none;
+    padding: 0px;
+    background: none;
+  }
+
+  #chat-text{
+    width:380px;
+    height:50px;
+    overflow-y:scroll;
+/*    position:absolute;
+    bottom:0px;
+    left:250px
+  */}
+
+  #chat{
+    position: absolute;
+    bottom: 0;
+    display:inline-block;
+    left: 250px;
+  }
+
+  #chat-form{
+    margin: 0px;
+  }
+
+  .img-blocks{
+    display : "block";
+    margin-left : "auto";
+    margin-right : "auto";
+  }
+
+  .inv-span{
+    font-family: cursive;
+    font-size: 20px;
+    font-style: italic;
+    color: white;
+  }
+  
+  .invisible{
+    visibility: hidden;
+  }
+
+  .myConfirm-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+	top: 0px;
+    left:0px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+/*    background-color: rgb(0,0,0); /* Fallback color */
+/*    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.myConfirm-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.myConfirm-close {
+    color: white;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.myConfirm-close:hover,
+.myConfirm-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myConfirm-button:hover,
+#myConfirm-button:focus,
+#myConfirm-button2:hover,
+#myConfirm-button2:focus {
+    color: #cccccc;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.myConfirm-header {
+    padding: 2px 16px;
+    background-color: #00beff;
+    color: white;
+}
+#myConfirm-titolo {
+    font-size:24px;
+    font-family: cursive;
+    text-align:center;
+    padding:10px;
+}
+
+.myConfirm-body {padding: 2px 16px;}
+#myConfirm-text {
+    font-size:24px;
+    font-family: cursive;
+    text-align:center;
+    padding:10px;
+}
+
+.myConfirm-footer {
+    padding: 2px 16px;
+    background-color: #00beff;
+    color: white;
+    height: 40px;
+}
+
+#myConfirm-button, #myConfirm-button2{
+	float: right;
+  background:    #3d85c6;
+	background:    -webkit-linear-gradient(#073763, #3d85c6 50%, #073763);
+	background:    linear-gradient(#073763, #3d85c6 50%, #073763);
+	border-radius: 5px;
+	width:         100px;
+	height:        35px;
+	color:         #ffffff;
+	display:       inline-block;
+	font:          italic 700 24px/35px "Calibri", sans-serif;
+	text-align:    center;
+	text-shadow:   1px 1px #000000;
+    margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+.myPrompt-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+top: 0px;
+  left:0px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+/*    background-color: rgb(0,0,0); /* Fallback color */
+/*    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.myPrompt-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.myPrompt-close {
+  color: white;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.myPrompt-close:hover,
+.myPrompt-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myPrompt-button:hover,
+#myPrompt-button:focus,
+#myPrompt-button2:hover,
+#myPrompt-button2:focus {
+  color: #cccccc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.myPrompt-header {
+  padding: 2px 16px;
+  background-color: #00beff;
+  color: white;
+}
+#myPrompt-titolo {
+  font-size:24px;
+  font-family: cursive;
+  text-align:center;
+  padding:10px;
+}
+
+.myPrompt-body {padding: 2px 16px;}
+#myPrompt-text {
+  font-size:24px;
+  font-family: cursive;
+  text-align:center;
+  padding:10px;
+}
+#myPrompt-bar {
+  font-size:24px;
+  font-family: cursive;
+  color:black;
+  width:-webkit-fill-available;
+}
+
+.myPrompt-footer {
+  padding: 2px 16px;
+  background-color: #00beff;
+  color: white;
+  height: 40px;
+}
+
+#myPrompt-button, #myPrompt-button2{
+float: right;
+background:    #3d85c6;
+background:    -webkit-linear-gradient(#073763, #3d85c6 50%, #073763);
+background:    linear-gradient(#073763, #3d85c6 50%, #073763);
+border-radius: 5px;
+width:         100px;
+height:        35px;
+color:         #ffffff;
+display:       inline-block;
+font:          italic 700 24px/35px "Calibri", sans-serif;
+text-align:    center;
+text-shadow:   1px 1px #000000;
+  margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+.myAlert-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+	  top: 0px;
+    left:0px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+/*    background-color: rgb(0,0,0); /* Fallback color */
+/*    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.myAlert-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.myAlert-close {
+    color: white;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.myAlert-close:hover,
+.myAlert-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myAlert-button:hover,
+#myAlert-button:focus {
+    color: #cccccc;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.myAlert-header {
+    padding: 2px 16px;
+    background-color: #00beff;
+    color: white;
+}
+#myAlert-titolo {
+    font-size:24px;
+    font-family: cursive;
+    text-align:center;
+    padding:10px;
+}
+
+.myAlert-body {padding: 2px 16px;}
+#myAlert-text {
+    font-size:24px;
+    font-family: cursive;
+    text-align:center;
+    padding:10px;
+}
+
+.myAlert-footer {
+    padding: 2px 16px;
+    background-color: #00beff;
+    color: white;
+    height: 40px;
+}
+
+#myAlert-button{
+	float: right;
+  background:    #3d85c6;
+	background:    -webkit-linear-gradient(#073763, #3d85c6 50%, #073763);
+	background:    linear-gradient(#073763, #3d85c6 50%, #073763);
+	border-radius: 5px;
+	width:         100px;
+	height:        35px;
+	color:         #ffffff;
+	display:       inline-block;
+	font:          italic 700 24px/35px "Calibri", sans-serif;
+	text-align:    center;
+	text-shadow:   1px 1px #000000;
+    	margin: 3px auto;
+}
+
+#MagiaBarra{width:200px;height:23px;background-color:#00ABFF;font-size:17px;display:inline-block;position:absolute;border-radius:5px;}
+#MagiaBarraOut{width:202px;height:25px;background-color:rgba(0, 0, 0, 0.329);font-size:22px;display:inline-block;position:absolute;border: 1px solid black;border-radius:5px;}
+#VitaBarra{width:200px;height:23px;background-color:#ff0000;font-size:17px;display:inline-block;position:absolute;border-radius:5px;}
+#VitaBarraOut{width:202px;height:25px;background-color:rgba(0, 0, 0, 0.329);font-size:22px;display:inline-block;position:absolute;border: 1px solid black;border-radius:5px;}
+#EsperienzaBarra{width:200px;height:23px;background-color:#22ff00;font-size:17px;display:inline-block;position:absolute;border-radius:5px;}
+#EsperienzaBarraOut{width:202px;height:25px;background-color:rgba(0, 0, 0, 0.329);font-size:22px;display:inline-block;position:absolute;border: 1px solid black;border-radius:5px;}
+.statistiche{width:200px;height:26px;}
+.statistiche2{position: absolute;padding-left: 10px;}
+#PannelloPG{position:absolute;bottom:0px;left:0px}
+#Livello{margin-left:3px;font-family:'Hanalei Fill', cursive;font-size:20px;}
+
+.gold{padding:5px;display:-webkit-inline-box;background:rgba(0, 0, 0, 0.329);border-radius:5px; width:160; height:30px; font-family: 'Hanalei Fill', cursive, 'Titillium Web', sans-serif; font-size:20px;}
+.gold2{padding:5px;display:inline-block;background:rgba(0, 0, 0, 0.329);border-radius:5px; width:100%; height:35px; font-family: 'Hanalei Fill', cursive, 'Titillium Web', sans-serif; font-size:25px; text-shadow: 2px 2px #ff0000;text-align:center;}
+.gold3{padding:7px;display:inline;background:rgba(0, 0, 0, 0.329);border-radius:5px;width:auto; height:40px; font-family: 'Hanalei Fill', cursive, 'Titillium Web', sans-serif; font-size:35px; text-shadow: 2px 2px #1100ff;text-align:center;margin:10px;}
+.gold3:hover{opacity:0.9}
+.gold3:active{transform: scale(0.9, 0.9);}
+.gold4{padding:3px;display:inline;background:rgba(0, 0, 0, 0.329);border-radius:5px;font-family: 'Hanalei Fill', cursive, 'Titillium Web', sans-serif; font-size:20px;text-align:center;margin:10px;}
+.gold4:hover{opacity:0.9}
+.gold4:active{transform: scale(0.9, 0.9);}
+#status_:hover{opacity: 0.9;}
+#status_:active{transform: scale(0.9, 0.9);}
+#abilita_:hover{opacity: 0.9;}
+#abilita_:active{transform: scale(0.9, 0.9);}
+
+body{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#statuto{position:absolute;bottom:0px;right:0px;}
+.st:hover{opacity: 0.5;}
+.st:active{transform: scale(0.9, 0.9);}
+
+#migliora{position:absolute;}
+.migliora_stat{    
+  display: inline;
+  float: right;
+  /* font-size: 25px; */
+  background: beige;
+  border-radius: 2px;
+  margin-right: 15px;
+  text-align: center;
+  width: 23px;
+  background: #b4e391;
+  background: -moz-linear-gradient(top, #b4e391 0%, #61c419 50%, #b4e391 100%);
+  background: -webkit-linear-gradient(top, #b4e391 0%,#61c419 50%,#b4e391 100%);
+  background: linear-gradient(to bottom, #b4e391 0%,#61c419 50%,#b4e391 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endC);
+}
+.migliora_stat:hover{opacity: 0.9;}
+.migliora_stat:active{transform: scale(0.9, 0.9);}
+
+#tooltip{
+	background:    #999999;
+	background:    -webkit-linear-gradient(#cccccc, #999999 50%, #cccccc);
+	background:    linear-gradient(#cccccc, #999999 50%, #cccccc);
+	border:        3px solid #000000;
+	border-radius: 5px;
+	color:         #ffffff;
+	display:       none;
+  font-family:'Hanalei Fill', cursive;
+  font-size:20px;
+  /*font:          normal 700 24px "Calibri", sans-serif;*/
+  text-align:    center;
+	text-shadow:   1px 1px #000000;
+	position:	absolute;
+	max-width:	400px;
+  padding:	5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.priorita1{z-index:1;}
+.priorita5{z-index:5;}
+.priorita10{z-index:10;}
+.priorita15{z-index:15;}
+.priorita20{z-index:20;}
+
+.in-table{margin: 4px;}
+.inline-block{display:inline-block;}
+.inline-table{display:inline-table;}
+.in-table2{margin: 14px;text-align: center;}
+#abilita_migliora{display: none;}
+
+#commento_skill{max-width:300px;font-family: 'Hanalei Fill', cursive, 'Titillium Web', sans-serif;font-size: 20px;}
+.titoloSkill{color:blue}
+.spiegazioneSkill{color:red}
+
+.fontFancy{font-family: 'Hanalei Fill', cursive, 'Titillium Web', sans-serif;font-size: 20px;}
+
+#short-inv{position:absolute; right:20px;}
+#short-abi{position:absolute; left:20px;}
+.short-inv-block{
+  border: 10px solid transparent;
+  padding: 1px;
+  margin:3px;
+  -webkit-border-image: url(cornice.png) 30 round; /* Safari 3.1-5 */
+  -o-border-image: url(cornice.png) 30 round; /* Opera 11-12.1 */
+  border-image: url(cornice.png) 30 round;
+  background-color: white;
+
+  background: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0,0.35) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, rgba(0, 0, 0,0.9) 0%,rgba(0, 0, 0,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, rgba(0, 0, 0,0.9) 0%,rgba(0, 0, 0,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#59000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#tp{padding:15px;}
+.tel{margin-top: 5px;}
+
+#allmiss,#allAbiPet{
+  overflow-y: auto;
+}
+
+#group{
+  min-width: 300px;
+  min-height: 500px;
+  max-width: 700px;
+  max-height: 500px;
+}
+#missioni{
+  min-width:500px;  
+  min-height: 500px;
+  max-width: 700px;
+  max-height: 500px;}
+
+.missioneCompletata, .userClicked{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0000+0,ff0000+100&1+1,0.5+23,0.5+77,1+100 */
+background: -moz-linear-gradient(-45deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 1%, rgba(255,0,0,0.5) 23%, rgba(255,0,0,0.5) 77%, rgba(255,0,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, rgba(255,0,0,1) 0%,rgba(255,0,0,1) 1%,rgba(255,0,0,0.5) 23%,rgba(255,0,0,0.5) 77%,rgba(255,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, rgba(255,0,0,1) 0%,rgba(255,0,0,1) 1%,rgba(255,0,0,0.5) 23%,rgba(255,0,0,0.5) 77%,rgba(255,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff0000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#titoloMissione, #spiegazioneMissione, #ricompensaMissione{font-size:18px;font-family: 'Hanalei Fill', cursive, 'Titillium Web', sans-serif;}
+#titoloMissione{color:blue;font-size: 23px;}
+#spiegazioneMissione{color:black}
+#ricompensaMissione{color:red}
+
+#groupFunction{margin-top:10px;}
+#nomeUser, #infoUser{font-family: 'Hanalei Fill', cursive, 'Titillium Web', sans-serif;}
+#nomeUser{font-size: 25px;color:red}
+#infoUser{font-size: 20px;color:rebeccapurple}
+#allusers{margin-top: 15px;overflow: auto;max-height: 390px;}
+#inserisciG,#rimuovi,#abbandona{display: none}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+#mag_back{min-width:200px;min-height: 100px;padding-top:25px}
+
+.close {
+  position:relative;
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: rgb(255, 0, 0);
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+#gold_suo, #gold_mio{float: right;}
+.red{background-color: red;}
+.green{background-color: green;}
+.center{margin-left: auto;margin-right: auto;display: block;}
+.centerD{display: table;margin: 0 auto;}
+.margin5{margin:5px;}
+.margin10{margin: 10px;}
+.margin15{margin: 15px;}
+.margin20{margin: 20px;}
+
+#status_pet_div{position: absolute;}
+#abilita_pet_div{display: none;}
+
+#allAbiPet{max-width:75px;max-height:400px;}
+#spiegAbiPet{max-width:300px;}
+#Stalliere, #hasPet{min-width: 400;max-width: 500px;min-height: 400;max-height: 500px;}

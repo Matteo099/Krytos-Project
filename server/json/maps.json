@@ -1,0 +1,23 @@
+{
+    "Island":{
+        "nome": "Island",
+        "monete": 5,
+        "gemme": 0,
+        "livelloMin": 1,
+        "livelloMax": 99999
+    },
+    "Deserto":{
+        "nome": "Deserto",
+        "monete": 10,
+        "gemme": 0,
+        "livelloMin": 10,
+        "livelloMax": 99999
+    },
+    "Citta":{
+        "nome": "Citta",
+        "monete": 0,
+        "gemme": 0,
+        "livelloMin": 1,
+        "livelloMax": 99999
+    }
+}

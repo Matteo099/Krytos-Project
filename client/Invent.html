@@ -1,0 +1,252 @@
+<style>
+    
+  [draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+  }
+  .column {
+    height: auto;
+    width: auto;
+    float: left;
+    border: 2px solid #666666;
+    background-color: #ccc;
+    margin-right: 5px;
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 3px #000;
+    -ms-box-shadow: inset 0 0 3px #000;
+    box-shadow: inset 0 0 3px #000;
+    text-align: center;
+    cursor: move;
+  }
+  .column header {
+    color: #fff;
+    text-shadow: #000 0 1px;
+    box-shadow: 5px;
+    /*padding: 5px;*/
+    background: -moz-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+    background: -webkit-gradient(linear, left top, right top,
+                                 color-stop(0, rgb(0,0,0)),
+                                 color-stop(0.50, rgb(79,79,79)),
+                                 color-stop(1, rgb(21,21,21)));
+    background: -webkit-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+    background: -ms-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+    border-bottom: 1px solid #ddd;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -ms-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -ms-border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-right-radius: 10px;
+  }
+  .column.over {
+    border: 2px dashed #000;
+  }
+  #columns{
+    width:550px;
+  }
+</style>
+<div id="inventario">
+        <div id="columns">
+            <div id=0 class="column" draggable="true">
+                <header>x3</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=1 class="column" draggable="true">
+                <header>x40</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=2 class="column" draggable="true"> 
+                <header>x2</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=3 class="column" draggable="true">
+                <header>x3</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=4 class="column" draggable="true">
+                <header>x40</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=5 class="column" draggable="true"> 
+                <header>x2</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=6 class="column" draggable="true">
+                <header>x3</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id="Arma" class="column" draggable="true">
+                <header>Arma</header>
+                <div class="x56"></div>
+            </div>
+
+            <div id=7 class="column" draggable="true">
+                <header>x40</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=8 class="column" draggable="true"> 
+                <header>x2</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=9 class="column" draggable="true">
+                <header>x40</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=10 class="column" draggable="true"> 
+                <header>x2</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=11 class="column" draggable="true">
+                <header>x40</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=12 class="column" draggable="true"> 
+                <header>x2</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=13 class="column" draggable="true">
+                <header>x3</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id="Armatura" class="column" draggable="true">
+                <header>Corazza</header>
+                <div class="x56"></div>
+            </div>
+
+            <div id=14 class="column" draggable="true">
+                <header>x40</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=15 class="column" draggable="true"> 
+                <header>x2</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=16 class="column" draggable="true">
+                <header>x3</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=17 class="column" draggable="true">
+                <header>x40</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=18 class="column" draggable="true"> 
+                <header>x2</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=19 class="column" draggable="true">
+                <header>x40</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id=20 class="column" draggable="true"> 
+                <header>x2</header>
+                <div class="x56" style="content:url('https://i0.wp.com/blog.macori.it/wp-content/uploads/2017/11/URL.png')"></div>
+            </div>
+
+            <div id="Anello" class="column" draggable="true">
+                <header>Anello</header>
+                <div class="x56"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        //http://jsfiddle.net/videma/2RuBh/
+        var dragSrcEl = null;
+
+function handleDragStart(e) {
+  // Target (this) element is the source node.
+  this.style.opacity = '0.4';
+
+  dragSrcEl = this;
+  console.log(this.innerHTML);
+
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault(); // Necessary. Allows us to drop.
+  }
+
+  e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+
+  return false;
+}
+
+function handleDragEnter(e) {
+  // this / e.target is the current hover target.
+  this.classList.add('over');
+}
+
+function handleDragLeave(e) {
+  this.classList.remove('over');  // this / e.target is previous target element.
+}
+
+function handleDrop(e) {
+  // this/e.target is current target element.
+  this.style.opacity = '1';
+
+  if (e.stopPropagation) {
+    e.stopPropagation(); // Stops some browsers from redirecting.
+  }
+
+  // Don't do anything if dropping the same column we're dragging.
+  if (dragSrcEl != this) {
+    // Set the source column's HTML to the HTML of the column we dropped on.
+    dragSrcEl.innerHTML = this.innerHTML;
+    this.innerHTML = e.dataTransfer.getData('text/html');
+  }
+
+  return false;
+}
+
+function handleDragEnd(e) {
+  // this/e.target is the source node.
+  this.style.opacity = '1';
+
+  [].forEach.call(cols, function (col) {
+    col.classList.remove('over');
+  });
+}
+
+var cols = document.querySelectorAll('#columns .column');
+[].forEach.call(cols, function(col) {
+  col.addEventListener('dragstart', handleDragStart, false);
+  col.addEventListener('dragenter', handleDragEnter, false)
+  col.addEventListener('dragover', handleDragOver, false);
+  col.addEventListener('dragleave', handleDragLeave, false);
+  col.addEventListener('drop', handleDrop, false);
+  col.addEventListener('dragend', handleDragEnd, false);
+});
+            </script>

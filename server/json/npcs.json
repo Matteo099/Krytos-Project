@@ -1,0 +1,31 @@
+{
+    "Bottegaia": {
+        "nome":"Bottegaia",
+        "img": "client/img/npc/Chimico.png",
+        "vendeOggetti": true,
+        "negozio": [
+            {"nome":"PozioneHP", "quantita": 100, "valore_monete": 150, "valore_gemme": 0},
+            {"nome":"PozioneRegHP", "quantita": 100, "valore_monete": 100, "valore_gemme": 0}
+        ]
+    },
+    "Magazzino": {
+        "nome":"Magazzino",
+        "img": "client/img/npc/Magazziniere.png",
+        "vendeOggetti": false
+    },
+    "Teleporter": {
+        "nome":"Teleporter",
+        "img": "client/img/npc/Teleporter.png",
+        "vendeOggetti": false
+    },
+    "Fabbro": {
+        "nome":"Fabbro",
+        "img": "client/img/npc/Fabbro.png",
+        "vendeOggetti": false
+    },
+    "Stalliere": {
+        "nome":"Stalliere",
+        "img": "client/img/npc/Stalliere.png",
+        "vendeOggetti": false
+    }
+}

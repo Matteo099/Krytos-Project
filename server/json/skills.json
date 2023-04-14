@@ -1,0 +1,278 @@
+{
+    "LevelUp":{
+        "nome": "Level Up",
+        "mpUsed": 0,
+        "timeToReuse": 0,
+        "ratio": 1,
+        "animation": {
+            "img": "client/img/Skill/LevelUp.png",
+            "frWidth": 5,
+            "frHeight": 4,
+            "animationSpeed": 0.5,
+            "loop":1
+        },
+        "option":{
+            "_x":0,
+            "_y":0,
+            "type":"self"
+        },
+        "classe": "",
+        "function": {
+            "arguments":"",
+            "body":""
+        },
+        "commento":"Level Up",
+        "miglioramenti":{}
+    },
+
+    "Cura":{
+        "nome": "Cura",
+        "imgPlayer": false,
+        "imgInv": "client/img/Skill/Cura_Inv.png",
+        "mpUsed": 10,
+        "timeToReuse": 250,
+        "timeEffect": 0,
+        "numeroColpi": 1,
+        "livello": 0,
+        "range": 0,
+        "ratio": 1,
+        "bonus": {"damage": 0, "defence": 0, "hp": 15, "mp": 0, "regMp":0, "regHp":0},
+        
+        "option":{
+            "_x":0,
+            "_y":-50,
+            "type":"self"
+        },
+
+        "animation": {
+            "img": "client/img/Skill/Cura.png",
+            "frWidth": 5,
+            "frHeight": 3,
+            "animationSpeed": 0.8,
+            "loop": 1
+        },
+        "classe": "Mago",
+        "function": {
+            "arguments":"data",
+            "body":"let vit = data.p.hp + data.sk.bonus.hp; if(vit>data.p.hpMax) data.p.hp = data.p.hpMax; else data.p.hp+=vit;"},
+        "commento":"Cura",
+        "spiegazione":"Cura istantanea",
+        "miglioramenti":{
+            "1":{
+                "monete": 10,
+                "gemme": 1,
+                "items": [
+                    {"nome":"Libro4", "quantita":2}
+                ],
+                "esperienza": 10,
+                "mpUsed": 15,
+                "timeToReuse": 100,
+                "timeEffect": 4500,
+                "numeroColpi": 1,
+                "range": 0,
+                "ratio": 1,
+                "bonus": {"damage": 0, "defence": 0, "hp": 0, "mp": 0, "regMp":0, "regHp":2}
+            }
+        }
+    },
+    "Ghiacciolo":{
+        "nome": "Ghiacciolo",
+        "imgPlayer": false,
+        "imgInv": "client/img/Skill/Ghiacciolo_Inv.png",
+        "mpUsed": 10,
+        "timeToReuse": 250,
+        "timeEffect": 0,
+        "numeroColpi": 1,
+        "range": 250,
+        "ratio": 1,
+        "livello": 0,
+        "bonus": {"damage": 5, "defence": 0, "hp": 0, "mp": 0, "regMp":0, "regHp":0},
+        
+        "option":{
+            "_x":0,
+            "_y":0,
+            "type":"enemy"
+        },
+
+        "animation": {
+            "img": "client/img/Skill/Ghiacciolo.png",
+            "frWidth": 5,
+            "frHeight": 5,
+            "animationSpeed": 0.6,
+            "loop": 1
+        },
+        "classe": "Mago",
+        "function": {
+            "arguments":"data",
+            "body":"if(data.p != null){ var dam = data.sk.bonus.damage+data.parent.damage; if(data.p.defence > dam){data.p.hp -= 0.05;CanvasText({msg:'-0.05', map:data.p.map, color:'red', x:data.p.x, y:data.p.y, entity:data.p});}else{data.p.hp+=(data.p.defence-dam);CanvasText({msg:data.p.defence-dam, map:data.p.map, color:'red', x:data.p.x, y:data.p.y, entity:data.p});}if(data.p.hp <= 0){data.p.onDeath(data.parent);}}"},
+        "commento":"Ghiacciolo",
+        "spiegazione":"Attacca un nemico creando un ghiacciolo",
+        "miglioramenti":{
+            "1":{
+                "monete": 10,
+                "gemme": 0,
+                "items": [
+                    {"nome":"Libro1", "quantita":2}
+                ],
+                "esperienza": 10,
+                "mpUsed": 15,
+                "timeToReuse": 100,
+                "timeEffect": 0,
+                "numeroColpi": 2,
+                "range": 200,
+                "ratio": 1,
+                "bonus": {"damage": 10, "defence": 0, "hp": 0, "mp": 0, "regMp":0, "regHp":2}
+            }
+        }
+    },
+    "Lampo":{
+        "nome": "Lampo",
+        "imgPlayer": false,
+        "imgInv": "client/img/Skill/Lampo_Inv.png",
+        "mpUsed": 15,
+        "timeToReuse": 400,
+        "timeEffect": 0,
+        "numeroColpi": 1,
+        "range": 100,
+        "ratio": 1,
+        "livello": 0,
+        "bonus": {"damage": 8, "defence": 0, "hp": 0, "mp": 0, "regMp":0, "regHp":0},
+        
+        "option":{
+            "_x":0,
+            "_y":-180,
+            "type":"enemy_collision"
+        },
+
+        "animation": {
+            "img": "client/img/Skill/Lampo.png",
+            "frWidth": 5,
+            "frHeight": 3,
+            "animationSpeed": 0.5,
+            "loop": 1
+        },
+        "classe": "Mago",
+        "function": {
+            "arguments":"data",
+            "body":"for(var i in data.sk.targets){var t = data.sk.targets[i];var dam = data.sk.bonus.damage+data.parent.damage; if(t.defence > dam){t.hp -= 0.05;CanvasText({msg:'-0.05', map:t.map, color:'red', x:t.x, y:t.y, entity:t});}else{t.hp+=(t.defence-dam);CanvasText({msg:t.defence-dam, map:t.map, color:'red', x:t.x, y:t.y, entity:t});}if(t.hp <= 0){t.onDeath(data.parent);} }"},
+        "commento":"Lampo",
+        "spiegazione":"Evoca un lampo",
+        "miglioramenti":{
+            "1":{
+                "monete": 10,
+                "gemme": 0,
+                "items": [
+                    {"nome":"Libro5", "quantita":2}
+                ],
+                "esperienza": 10,
+                "mpUsed": 15,
+                "timeToReuse": 380,
+                "timeEffect": 0,
+                "numeroColpi": 2,
+                "range": 300,
+                "ratio": 1,
+                "bonus": {"damage": 13, "defence": 0, "hp": 0, "mp": 0, "regMp":0, "regHp":0}
+            }
+        }
+    },
+    "RinforzoDelDemone":{
+        "nome": "Rinforzo del demone",
+        "imgPlayer": false,
+        "imgInv": "client/img/Skill/Rinforzo_Del_Demone_Inv.png",
+        "mpUsed": 10,
+        "timeToReuse": 250,
+        "timeEffect": 2000,
+        "numeroColpi": 1,
+        "range": 133,
+        "livello": 0,
+        "ratio": 1,
+        "bonus": {"damage": 0, "defence": 5, "hp": 0, "mp": 0, "regMp":0, "regHp":0},
+        
+        "option":{
+            "_x":0,
+            "_y":0,
+            "type":"player_collision"
+        },
+
+        "animation": {
+            "img": "client/img/Skill/Rinforzo_Del_Demone.png",
+            "frWidth": 5,
+            "frHeight": 6,
+            "animationSpeed": 0.8,
+            "loop": -1
+        },
+        "classe": "Mago",
+        "function": {
+            "arguments":"data",
+            "body":"data.parent.usingSkill=true; data.p.defence+=data.sk.bonus.defence; var _function = function(){data.parent.usingSkill=false; data.p.defence-=data.sk.bonus.defence; data.sk.toRemove=true; return;}; setTimeout(_function, data.sk.timeEffect);"},
+        "commento":"Rinforzo del demone",
+        "spiegazione":"Aumenta la difesa di tutti i personaggi vicini a te (incluso te)",
+        "miglioramenti":{
+            "1":{
+                "monete": 10,
+                "gemme": 1,
+                "items": [
+                    {"nome":"Libro2", "quantita":2}
+                ],
+                "esperienza": 10,
+                "mpUsed": 15,
+                "timeToReuse": 100,
+                "timeEffect": 3500,
+                "numeroColpi": 2,
+                "range": 133,
+                "ratio": 1.3,
+                "bonus": {"damage": 0, "defence": 7.5, "hp": 0, "mp": 0, "regMp":0, "regHp":0}
+            }
+        }
+    },
+    "Rigenerazione":{
+        "nome": "Rigenerazione",
+        "imgPlayer": false,
+        "imgInv": "client/img/Skill/Rigenerazione_Inv.png",
+        "mpUsed": 10,
+        "timeToReuse": 250,
+        "timeEffect": 2000,
+        "numeroColpi": 1,
+        "livello": 0,
+        "range": 192,
+        "ratio": 1,
+        "bonus": {"damage": 0, "defence": 0, "hp": 0, "mp": 0, "regMp":1, "regHp":1},
+        
+        "option":{
+            "_x":0,
+            "_y":0,
+            "type":"player_collision"
+        },
+
+        "animation": {
+            "img": "client/img/Skill/Rigenerazione.png",
+            "frWidth": 5,
+            "frHeight": 4,
+            "animationSpeed": 0.6,
+            "loop": -1
+        },
+        "classe": "Mago",
+        "function": {
+            "arguments":"data",
+            "body":"data.parent.usingSkill=true; data.p.regHp+=data.sk.bonus.regHp;data.p.regMp+=data.sk.bonus.regMp; var _function = function(){data.parent.usingSkill=false; data.p.regHp-=data.sk.bonus.regHp;data.p.regMp-=data.sk.bonus.regMp; data.sk.toRemove=true; return;}; setTimeout(_function, data.sk.timeEffect);"},
+        "commento":"Rigenerazione hp e mp",
+        "spiegazione":"Aumenta la rigeneragione hp e mp di tutti i personaggi vicini a te (incluso te)",
+        "miglioramenti":{
+            "1":{
+                "monete": 10,
+                "gemme": 1,
+                "items": [
+                    {"nome":"Libro3", "quantita":2}
+                ],
+                "esperienza": 10,
+                "mpUsed": 15,
+                "timeToReuse": 100,
+                "timeEffect": 4500,
+                "numeroColpi": 1,
+                "range": 192,
+                "ratio": 1.5,
+                "bonus": {"damage": 0, "defence": 0, "hp": 0, "mp": 0, "regMp":1.5, "regHp":1.5}
+            }
+        }
+    }
+}

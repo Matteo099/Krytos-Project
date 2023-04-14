@@ -1,0 +1,1592 @@
+<head>
+    <!--<style>* {padding: 0; margin: 0}</style>
+    -->
+    <meta charset="UTF-8">
+
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="client/css/style.css" type='text/css'>
+
+</head>
+<body>
+
+        <div id="myAlert" class="myAlert-modal priorita10">
+                <div class="myAlert-content">
+                    <div class="myAlert-header">
+                        <span class="myAlert-close" onclick="var modal = document.getElementById('myAlert');modal.style.display = 'none';">&times;</span>
+                        <h2 id="myAlert-titolo">Attenzione!</h2>
+                    </div>
+                    <div class="myAlert-body">
+                        <p id="myAlert-text">Testo</p>
+                    </div>
+                    <div class="myAlert-footer">
+                        <div id="myAlert-button" onclick="var modal = document.getElementById('myAlert');modal.style.display = 'none';">
+                              <span style="text-align:center;cursor:pointer;">Ok</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="myConfirm" class="myConfirm-modal priorita5">
+                <div class="myConfirm-content">
+                    <div class="myConfirm-header">
+                        <span class="myConfirm-close" onclick="var modal = document.getElementById('myConfirm');modal.style.display = 'none';">&times;</span>
+                        <h2 id="myConfirm-titolo">Attenzione!</h2>
+                    </div>
+                    <div class="myConfirm-body">
+                        <p id="myConfirm-text">Testo</p>
+                    </div>
+                    <div class="myConfirm-footer">
+                        <div id="myConfirm-button">
+                            <span style="text-align:center;cursor:pointer;">Ok</span>
+                        </div>
+                        <div id="myConfirm-button2" onclick="var modal = document.getElementById('myConfirm');modal.style.display = 'none';">
+                            <span style="text-align:center;cursor:pointer;">Annulla</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div id ="singDiv">
+        <!--
+        Username: <input id="singDiv-username" type="text"></input><br>
+        Password: <input id="singDiv-password" type="password"></input>
+        <button id="singDiv-singIn">Sing In</button>
+        <button id="singDiv-singUp">Sing Up</button>
+        -->
+
+        <div class="form">
+      
+            <ul class="tab-group">
+                <li class="tab active"><a href="#signup">Registrati</a></li>
+                <li class="tab"><a href="#login">Accedi</a></li>
+            </ul>
+                
+            <div class="tab-content">
+                <div id="signup">   
+                <h1>Registrati</h1>
+                
+                <form id="singDiv-singUp" action="javascript:registratiForm()" method="post">
+
+                <div class="field-wrap">
+                    <label>
+                        Nickname<span class="req">*</span>
+                    </label>
+                    <input id="registrati-username" type="text" required autocomplete="off" />
+                </div>
+
+
+                <div class="field-wrap">
+                    <label>
+                        Email Address<span class="req">*</span>
+                    </label>
+                    <input id="registrati-email" type="email"required autocomplete="off"/>
+                </div>
+        
+                <div class="field-wrap">
+                    <label>
+                    Password<span class="req">*</span>
+                    </label>
+                    <input id="registrati-password" type="password"required autocomplete="off"/>
+                </div>
+                
+                <div class="field-wrap">
+                    <label>
+                    Ripeti Password<span class="req">*</span>
+                    </label>
+                    <input id="registrati-password2" id="singDiv-password" type="password"required autocomplete="off"/>
+                </div>
+                
+                <button type="submit" class="button button-block"/>Registrati!</button>
+                
+                </form>
+        
+            </div>
+                  
+            <div id="login">   
+                <h1>Welcome Back!</h1>
+                
+                <form action="javascript:accediForm()" method="post">
+                
+                    <div class="field-wrap">
+                    <label>
+                    Email Address<span class="req">*</span>
+                    </label>
+                    <input id="accedi-email" id="singDiv-username" type="email"required autocomplete="off"/>
+                </div>
+                
+                <div class="field-wrap">
+                    <label>
+                    Password<span class="req">*</span>
+                    </label>
+                    <input id="accedi-password" type="password"required autocomplete="off"/>
+                </div>
+                
+                <p class="forgot"><a href="#">Non sei Registrato?</a></p>
+                
+                <button id="singDiv-singIn" class="button button-block"/>Accedi!</button>
+                
+                </form>
+        
+            </div>
+                  
+            </div><!-- tab-content -->  
+        </div> <!-- /form -->
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+            <script src="client/js/login-up.js"></script>
+    </div>
+ 
+    <div id="gameDiv" style="display:none">
+
+        <div id="game" style="position:absolute;width:500px;height:500px;">
+            
+            <canvas id="ctx" width="500" height="500" style="position:absolute"></canvas>
+            
+            <!--<canvas id="ctx-ui" width="500" height="500" style="position:absolute"></canvas>
+            -->
+
+            <div id="tooltip" class="priorita10"></div>
+
+            <div id="ui" style="position:absolute;width:500px;height:500px;">
+                
+                <div style="padding:3px;">
+                    <div class="gold">
+                        <img src="client/img/items/Gemma.png" style="width:50px;vertical-align: middle;"/><span style="margin-left:2px" id="Gemme">0</span>
+                    </div>
+                    <div class="gold">
+                        <img src="client/img/items/Moneta.png" style="width:30px;vertical-align: middle;"/><span style="margin-left:2px" id="Monete">0</span>&nbsp;<br>                        
+                    </div>
+                </div>
+                
+                <!--
+                    <button onclick="changeMap()" style="position:absolute;bottom:0px;left:0px">Change Map</button>
+                -->
+
+                <div id="short-abi">
+                    <table>
+                        <tr><td id="abi0" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="abi1" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="abi2" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="abi3" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="abi4" class="x86 short-inv-block"></td></tr>
+                    </table>
+                </div>
+
+                <div id="short-inv">
+                    <table>
+                        <tr><td id="s0" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="s1" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="s2" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="s3" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="s4" class="x86 short-inv-block"></td></tr>
+                    </table>
+                </div>
+
+                <div id="PannelloPG">
+                        <div class="statistiche">
+                            <span id="Livello">Livello: 1</span>
+                        </div>
+                        <div class="statistiche">
+                            <div id="EsperienzaBarraOut">
+                                <div id="EsperienzaBarra"></div>
+                            </div>
+                                <span id="EsperienzaText" class="statistiche2">EXP 100/100</span>
+                        </div>
+                        <div class="statistiche">
+                            <div id="MagiaBarraOut">
+                                <div id="MagiaBarra"></div>
+                            </div>
+                                <span id="MagiaText" class="statistiche2">MP 300/300</span>
+                        </div>
+                        <div class="statistiche">
+                            <div id="VitaBarraOut">
+                                <div id="VitaBarra"></div>
+                            </div>
+                                <span id="VitaText" class="statistiche2">HP 100/100</span>
+                        </div>                         
+                </div>
+
+                <div id="inventario" style="display:none;position:absolute;"></div>
+                <div id="inventarioNPC" style="display:none;position:absolute;">
+                    <table class="inline inventory-tab">
+                        <tr>
+                            <td id="0NPC" class="x86 inv-block"></td>
+                            <td id="1NPC" class="x86 inv-block"></td>
+                            <td id="2NPC" class="x86 inv-block"></td>
+                            <td id="3NPC" class="x86 inv-block"></td>
+                            <td id="4NPC" class="x86 inv-block"></td>
+                        </tr>
+                        <tr>
+                            <td id="5NPC" class="x86 inv-block"></td>
+                            <td id="6NPC" class="x86 inv-block"></td>
+                            <td id="7NPC" class="x86 inv-block"></td>
+                            <td id="8NPC" class="x86 inv-block"></td>
+                            <td id="9NPC" class="x86 inv-block"></td>
+                        </tr>
+                        <tr>
+                            <td id="10NPC" class="x86 inv-block"></td>
+                            <td id="11NPC" class="x86 inv-block"></td>
+                            <td id="12NPC" class="x86 inv-block"></td>
+                            <td id="13NPC" class="x86 inv-block"></td>
+                            <td id="14NPC" class="x86 inv-block"></td>
+                        </tr>
+                        <tr>
+                            <td id="15NPC" class="x86 inv-block"></td>
+                            <td id="16NPC" class="x86 inv-block"></td>
+                            <td id="17NPC" class="x86 inv-block"></td>
+                            <td id="18NPC" class="x86 inv-block"></td>
+                            <td id="19NPC" class="x86 inv-block"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="Fabbro" style="display:none;position:absolute;"></div>
+                <div id="Teleporter" style="display:none;position:absolute;">
+                    <div class="inventory-tab" id="tp">
+                        <div class="gold2 tel">
+                            <span id="Island" onclick="/*changeMap('Island');*/socket.emit('changeMap', 'Island');">Island</span>
+                        </div>
+                        <div class="gold2 tel">
+                            <span id="Citta" onclick="/*changeMap('Citta');*/socket.emit('changeMap', 'Citta');">Citta</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="Magazzino" style="display:none;position:absolute;">
+                    <div class="inventory-tab" id="mag_back">
+                        <div class="gold3">
+                            <span id="inserisci" onclick="inserisciMagazzino();">inserisci</span>
+                        </div>
+                        <div class="gold3" onclick="prendiMagazzino();">
+                            <span id="prendi">prendi</span>
+                        </div>
+                    </div>
+
+                    <div id="prendi_mag" style="display:none">
+                        <table class="inline inventory-tab">
+                            <tr>
+                                <td id="0mag" class="x86 inv-block"></td>
+                                <td id="1mag" class="x86 inv-block"></td>
+                                <td id="2mag" class="x86 inv-block"></td>
+                                <td id="3mag" class="x86 inv-block"></td>
+                                <td id="4mag" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="5mag" class="x86 inv-block"></td>
+                                <td id="6mag" class="x86 inv-block"></td>
+                                <td id="7mag" class="x86 inv-block"></td>
+                                <td id="8mag" class="x86 inv-block"></td>
+                                <td id="9mag" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="10mag" class="x86 inv-block"></td>
+                                <td id="11mag" class="x86 inv-block"></td>
+                                <td id="12mag" class="x86 inv-block"></td>
+                                <td id="13mag" class="x86 inv-block"></td>
+                                <td id="14mag" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="15mag" class="x86 inv-block"></td>
+                                <td id="16mag" class="x86 inv-block"></td>
+                                <td id="17mag" class="x86 inv-block"></td>
+                                <td id="18mag" class="x86 inv-block"></td>
+                                <td id="19mag" class="x86 inv-block"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="migliora" style="display:none;position:absolute;" class="inventory-tab">
+
+                    <div class="in-table2">
+                        <div class="gold3">
+                            <span id="status_">status</span>
+                        </div>
+                        <div class="gold3">
+                            <span id="abilita_">abilita</span>
+                        </div>
+                    </div>
+
+                    <div id="punti_migliora">
+
+                        <div class="in-table">
+                            <div class="gold2">
+                                <span id="puntiStat">Punti disponibili: 1</span>
+                            </div>
+                        </div>
+    
+                        <div class="in-table">
+                            <div class="gold">
+                                <span id="hpMax">HP: 130</span>
+                                <div class="migliora_stat" id="hpMax_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                            <div class="gold">
+                                <span id="mpMax">MP: 130</span>
+                                <div class="migliora_stat" id="mpMax_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                            <div class="gold">
+                                <span id="defence">DEF: 130</span>
+                                <div class="migliora_stat" id="defence_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                            <div class="gold">
+                                <span id="damage">ATK: 130</span>
+                                <div class="migliora_stat" id="damage_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                        </div>
+    
+                        <div class="in-table">
+                            <div class="gold">
+                                <span id="regHp">REG HP: 0.1</span>
+                                <div class="migliora_stat" id="regHp_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                            <div class="gold">
+                                <span id="regMp">REG MP: 0.1</span>
+                                <div class="migliora_stat" id="regMp_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="abilita_migliora">
+                        
+                            <div class="in-table">
+                                <div class="gold2">
+                                    <span id="puntiAbi">Punti disponibili: 0</span>
+                                </div>
+                            </div>
+        
+                            <div class="in-table">
+                                <div class="gold">
+                                    <span id="ab">Nessuna abilità</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                </div>
+
+                <div id="chat">
+                    <div id="chat-text">
+                        <!--<div>Ciao!</div>-->
+                    </div>
+                    <form id="chat-form">
+                        <input id="chat-input" type="text" style="width:500" onfocusin="writing=true" onfocusout="writing=false"></input>
+                    </form>
+                </div>
+
+                <div id="statuto">
+                    <img src="client/img/gui/Inventario.png" class="x64 st" onclick="inventory.open();">
+                    <img src="client/img/gui/Migliora.png" class="x64 st" onclick="status_pg.open();">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+
+https://ezgif.com/split/ezgif-2-f1d5101b04.gif
+https://opengameart.org/content/sorlo-ultimate-smash-friends
+-->
+
+
+<script src="client/js/socket.io.js"></script>
+<script src="client/js/sha256.min.js"></script>
+<script src="client/js/Inventory.js"></script>
+<script src="client/js/myFunctions.js"></script>
+<script src="client/js/loadMap.js"></script>
+<script src="client/js/mondo.js"></script>
+
+<script>
+    var WIDTH = window.innerWidth;
+    var HEIGHT = window.innerHeight;
+    
+    var ctx = document.getElementById("ctx").getContext("2d");
+    ctx.canvas.width = WIDTH;
+    ctx.canvas.height = HEIGHT;
+
+
+    let resizeCanvas = () => {
+        WIDTH = window.innerWidth;
+        HEIGHT = window.innerHeight;
+        ctx.canvas.width = WIDTH;
+        ctx.canvas.height = HEIGHT;
+        //ctxUi.canvas.width = WIDTH;
+        //ctxUi.canvas.height = HEIGHT;
+        
+        gameDiv.style.width = WIDTH;
+        gameDiv.style.height = HEIGHT;
+        game.style.width = WIDTH;
+        game.style.height = HEIGHT;
+        ui.style.width = WIDTH;
+        ui.style.height = HEIGHT;
+
+        inv.style.left = (WIDTH-770)/2;
+        inv.style.top = (HEIGHT-385)/2;
+        migliora.style.left = (WIDTH-626)/2;
+        migliora.style.top = (HEIGHT-127)/2;
+        short_inv.style.top = (HEIGHT-442)/2;
+        short_abi.style.top = (HEIGHT-442)/2;
+
+        chat.style.left = (WIDTH-500)/2;
+        chat.style.bottom = 0;
+    }
+
+    var socket = io();
+
+    //sing
+    var singDiv = document.getElementById("singDiv"),
+        singDivUsername = document.getElementById("singDiv-username"),
+        singDivSingIn = document.getElementById("singDiv-singIn"),
+        singDivSingUp = document.getElementById("singDiv-singUp"),
+        singDivPassword = document.getElementById("singDiv-password"),
+        gameDiv = document.getElementById("gameDiv"),
+        game = document.getElementById("game"),
+        ui = document.getElementById("ui"),
+        inv = document.getElementById("inventario");
+        gameDiv.style.width = WIDTH;
+        gameDiv.style.height = HEIGHT;
+        game.style.width = WIDTH;
+        game.style.height = HEIGHT;
+        ui.style.width = WIDTH;
+        ui.style.height = HEIGHT;
+
+    var reg_username = document.getElementById("registrati-username"),
+        reg_email = document.getElementById("registrati-email"),
+        reg_password = document.getElementById("registrati-password"),
+        reg_password2 = document.getElementById("registrati-password2"),
+        acc_email = document.getElementById("accedi-email"),
+        acc_password = document.getElementById("accedi-password");
+    
+    var accediForm = function(){
+        let pw = sha256(acc_password.value);
+        socket.emit("singIn", {email: acc_email.value, password: pw});
+    }
+    var registratiForm = function(){
+        if(reg_password.value == reg_password2.value){
+            let pw = sha256(reg_password.value);
+            socket.emit("singUp", {username: reg_username.value, password: pw, email: reg_email.value});
+        }
+        else myAlert("Password diverse!");
+    }
+
+    socket.on("singInResponse", function(data){
+        if(data.success){
+            singDiv.style.display = "none";
+            gameDiv.style.display = "inline-block";
+        }else myAlert("Sing in non avvenuto");
+    });
+    socket.on("singUpResponse", function(data){
+        myAlert(data.text);
+        /*if(data.success) alert("Sing up avvenuto");
+        else alert("Sing up non avvenuto");
+        */
+    });
+
+    //chat game
+    var chatText = document.getElementById("chat-text"),
+        chatInput = document.getElementById("chat-input"),
+        chatForm = document.getElementById("chat-form"),
+        chat = document.getElementById("chat"),
+        writing = false;
+
+    socket.on("addToChat", function(data){
+        chatText.innerHTML += "<div>" + data + "</div>";
+        chatText.scrollTop = chatText.scrollHeight;
+    });
+    socket.on("evalAnsware", function(data){
+        console.log(data);
+    });
+
+    chatForm.onsubmit = function(e){
+        e.preventDefault();
+        if(chatInput.value[0] === '/') socket.emit("evalServer", chatInput.value.slice(1));
+        else if(chatInput.value[0] === '@') socket.emit("sendPmToServer", {username:chatInput.value.slice(1,chatInput.value.indexOf(',')), message:chatInput.value.slice(chatInput.value.indexOf(',')+1)});
+        else socket.emit("sendMsgToServer", chatInput.value);
+        chatInput.value = "";
+    }
+
+    //Stats
+    var migliora = document.getElementById("migliora"),
+        hpMax = document.getElementById("hpMax"),
+        hpMax_migliora = document.getElementById("hpMax_migliora"),
+        mpMax = document.getElementById("mpMax"),
+        mpMax_migliora = document.getElementById("mpMax_migliora"),
+        defence = document.getElementById("defence"),
+        defence_migliora = document.getElementById("defence_migliora"),
+        damage = document.getElementById("damage"),
+        damage_migliora = document.getElementById("damage_migliora"),
+        regHp = document.getElementById("regHp"),
+        regHp_migliora = document.getElementById("regHp_migliora"),
+        regMp = document.getElementById("regMp"),
+        regMp_migliora = document.getElementById("regMp_migliora"),
+        puntiStat = document.getElementById("puntiStat"),
+        abilita_migliora = document.getElementById("abilita_migliora"),
+        puntiAbi = document.getElementById("puntiAbi"),
+        ab = document.getElementById("ab"),
+        status_ = document.getElementById("status_"),
+        abilita_ = document.getElementById("abilita_"),
+        short_inv = document.getElementById("short-inv"),
+        short_abi = document.getElementById("short-abi"),
+        invNPC = document.getElementById("inventarioNPC"),
+        teleporter = document.getElementById("Teleporter"),
+        magazzino = document.getElementById("Magazzino"),
+        prendi_mag = document.getElementById("prendi_mag"),
+        mag_back = document.getElementById("mag_back");
+
+    status_.onclick = function(){
+        punti_migliora.style.display="block";
+        abilita_migliora.style.display="none";
+    }
+    abilita_.onclick = function(){
+        abilita_migliora.style.display="block";
+        punti_migliora.style.display="none";
+    }
+
+    atrTooltip(hpMax_migliora, "aumenta di 1 HP");
+    atrTooltip(mpMax_migliora, "aumenta di 1 MP");
+    atrTooltip(defence_migliora, "aumenta di 0.05 DEF");
+    atrTooltip(damage_migliora, "aumenta di 0.05 ATK");
+    atrTooltip(regHp_migliora, "aumenta di 0.05 rigeneragione hp");
+    atrTooltip(regMp_migliora, "aumenta di 0.05 rigeneragione mp");
+
+    var status_pg = {};
+    status_pg.open = function(){
+        if(migliora.style.display == "none"){
+            inv.style.display = "none";
+            migliora.style.display = "block";
+        }
+        else migliora.style.display = "none";
+    }
+    status_pg.migliora = function(n){
+        var f = n.id.replace("_migliora", "");
+        console.log(f);
+        socket.emit("miglioraStat",f);
+    }
+
+
+    //statistics
+    var hp_barra = document.getElementById("VitaBarra"),
+        hp_text = document.getElementById("VitaText"),
+        mp_barra = document.getElementById("MagiaBarra"),
+        mp_text = document.getElementById("MagiaText"),
+        exp_barra = document.getElementById("EsperienzaBarra"),
+        exp_text = document.getElementById("EsperienzaText"),
+        monete = document.getElementById("Monete"),
+        gemme = document.getElementById("Gemme"),
+        livello = document.getElementById("Livello");
+    
+    var update_GUI = function(){
+        
+        data = Player.list[selfId];
+        //data = {hp:int, hpMax:int, mp:int, mpMax:int, exp: int}
+        const barraWidth = 200;
+        hp_barra.style.width = (data.hp*barraWidth)/data.hpMax;
+        mp_barra.style.width = (data.mp*barraWidth)/data.mpMax;
+        exp_barra.style.width = (data.exp*barraWidth)/100;
+
+        hp_text.innerHTML = "HP "+Math.round(data.hp * 10)/10+"/"+data.hpMax;
+        mp_text.innerHTML = "MP "+Math.round(data.mp * 10)/10+"/"+data.mpMax;
+        exp_text.innerHTML = "EXP "+Math.round(data.exp * 10)/10+"/100";
+
+        monete.innerHTML = data.gold;
+        gemme.innerHTML = data.gemme;
+        livello.innerHTML = "livello: "+data.livello;
+
+        hpMax.innerHTML = "hp: "+data.hpMax;
+        mpMax.innerHTML = "mp: "+data.mpMax;
+        defence.innerHTML = "def: "+data.defence;
+        damage.innerHTML = "atk: "+data.damage;
+        regHp.innerHTML = "reg hp: "+data.regHp;
+        regMp.innerHTML = "reg mp: "+data.regMp;
+        puntiStat.innerHTML = "punti disponibili: "+data.puntiStat;
+
+        if(data.puntiStat>0){
+            hpMax_migliora.style.display = "block";
+            mpMax_migliora.style.display = "block";
+            defence_migliora.style.display = "block";
+            damage_migliora.style.display = "block";
+            regHp_migliora.style.display = "block";
+            regMp_migliora.style.display = "block";
+        }else{
+            hpMax_migliora.style.display = "none";
+            mpMax_migliora.style.display = "none";
+            defence_migliora.style.display = "none";
+            damage_migliora.style.display = "none";
+            regHp_migliora.style.display = "none";
+            regMp_migliora.style.display = "none";
+        }
+
+        inventarioNPC.style.left = (WIDTH-476)/2;
+        inventarioNPC.style.top = (HEIGHT-385)/2;
+
+/*
+        mag_back.style.left = (WIDTH-320)/2;
+        mag_back.style.top = (HEIGHT-50)/2;
+        prendi_mag.style.left = (WIDTH-476)/2;
+        prendi_mag.style.top = (HEIGHT-385)/2;*/
+    }
+
+
+
+
+    //UI
+    /*
+    var changeMap = function(nome){
+        socket.emit("changeMap", nome);
+    }*/
+
+    var inventory = new Inventory([],socket,false,[],{},[]);
+    socket.on("updateInventory", function(opt){
+        //console.log(opt);
+        inventory.items = opt.items;
+        inventory.equip = opt.equip;
+        inventory.short_inv = opt.short_inv;
+        inventory.magazzino = opt.magazzino;
+        inventory.refreshRender();
+    });
+
+    //game
+    var mondo = {};
+
+/*
+    var Img = {};
+    Img.player = new Image();
+    Img.player.src = '/client/img/pallainfuocata.png';
+    Img.player.frH = 1;
+    Img.player.frW = 7;
+    Img.map = {};
+    Img.map["Forest"] = new Image();
+    Img.map["Forest"].src = '/client/img/Forest.png';
+    Img.map["field"] = new Image();
+    Img.map["field"].src = '/client/img/field.png';
+*/
+    socket.on("alert", function(data){
+        myAlert(data);
+    });
+
+    socket.on("console_log", function(data){
+        console.log(data);
+    });
+
+    socket.on("confirm", function(data){
+        data.titolo = data.titolo || "Atenzione!";
+
+        let cb = data.cb || function(){};
+        data.cb = function(){
+            cb();
+            if(data.emit.bool) socket.emit(data.emit.nome, data.data);
+        }
+        
+        myConfirm(data.msg, data.titilo, function(){
+            data.cb();
+        });
+    });
+
+    var openNPC = false;
+    var Player = function(initPack){
+        var self = {};
+
+        self.id = initPack.id;
+        self.number = initPack.number;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.hp = initPack.hp;
+        self.hpMax = initPack.hpMax;
+        self.mp = initPack.mp;
+        self.mpMax = initPack.mpMax;
+
+        self.defence = initPack.defence;
+        self.damage = initPack.damage;
+        self.regHp = initPack.regHp;
+        self.regMp = initPack.regMp;
+        self.puntiStat = initPack.puntiStat;
+
+        self.skill = initPack.skill;
+
+        self.gold = initPack.gold;
+        self.gemme = initPack.gemme;
+        self.livello = initPack.livello;
+        self.exp = initPack.esperienza;
+        self.score = initPack.score;
+        self.map = initPack.map;
+        self.map_options = initPack.map_options;
+
+        self.mouseAngle = initPack.mouseAngle;
+
+        creaMondo(initPack.map_options);
+
+        //socket.emit('collisionBlock', mondo.collision);
+        
+        self.spdX = 0;
+        self.spdY = 0;
+
+        self.img = new Image();
+        self.animation_idle = initPack.animation_idle;
+        self.animation_walking = initPack.animation_walking;
+        self.spriteCounterAnimation = 0;
+        self.ratio = 2;
+        self.lastNeg = false;
+        
+        self.lastAbi = [];
+        for(var i=0;i<5;i++) self.lastAbi[i] = false;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            var hpWidth = 30*self.hp / self.hpMax;
+            ctx.fillStyle = '#00ff19';
+            ctx.fillRect(x-hpWidth/2, y-40,hpWidth,4);
+
+            var corrent = self.animation_walking;
+            if(self.spdX == 0 && self.spdY == 0) corrent = self.animation_idle;
+
+            var property = corrent.property;
+
+            var aimAngle = self.mouseAngle;
+            if(aimAngle<0) aimAngle += 360;
+
+            //dvar directionMode = 3; //right
+            self.frWidth = property.nfrW_right;
+            self.frHeight = property.nfrH_right;
+            self.ratio = property.ratio_right;
+            self.img.src = corrent.img_right;
+
+            if(aimAngle >= 45 && aimAngle < 135){//down
+                //directionMode = 2;
+                self.frWidth = property.nfrW_down;
+                self.frHeight = property.nfrH_down;
+                self.ratio = property.ratio_down;
+                self.img.src = corrent.img_down;
+                self.spriteCounterAnimation += property.aS_down;
+            }
+            else{
+                if(aimAngle >= 135 && aimAngle < 225){//left
+                    //directionMode = 1;
+                    self.frWidth = property.nfrW_left;
+                    self.frHeight = property.nfrH_left;
+                    self.ratio = property.ratio_left;
+                    self.img.src = corrent.img_left;
+                    self.spriteCounterAnimation += property.aS_left;
+                }
+                else{
+                    if(aimAngle >= 225 && aimAngle < 315){//up
+                        //directionMode = 0;
+                        self.frWidth = property.nfrW_up;
+                        self.frHeight = property.nfrH_up;
+                        self.ratio = property.ratio_up;
+                        self.img.src = corrent.img_up;
+                        self.spriteCounterAnimation += property.aS_up;
+                    }
+                    else self.spriteCounterAnimation += property.aS_right;
+                }
+            }
+            
+            var walkingMod = Math.floor(self.spriteCounterAnimation) % (self.frWidth*self.frHeight) || 0;
+
+            var width = self.img.width,
+                height = self.img.height;
+
+                
+            self.frameWidth = width/self.frWidth;
+            self.frameHeight = height/self.frHeight;
+
+            var img_width = self.frameWidth*self.ratio,
+                img_height = self.frameHeight*self.ratio;
+
+            ctx.drawImage(self.img,
+                walkingMod*self.frameWidth,0*self.frameHeight,self.frameWidth,self.frameHeight,
+                x-img_width/2,y-img_height/2,img_width,img_height);
+        
+        
+            let minX_p = self.x - 64,
+                maxX_p = self.x + 64,
+                minY_p = self.y - 64,
+                maxY_p = self.y + 64;
+
+            let closeAll = true;
+            for(var i in NPC.list){
+                if(NPC.list[i].x>=minX_p && NPC.list[i].x<=maxX_p && NPC.list[i].y>=minY_p && NPC.list[i].y<=maxY_p && NPC.list[i].map == self.map){
+                    if(inventory.clickItems.option != "Magazzino") document.getElementById("inventario").style.display = "none";
+			        document.getElementById("migliora").style.display = "none";
+                    
+                    if(self.lastNeg == i) NPC.list[i].openInventory(false);
+                    else NPC.list[i].openInventory(true);
+                    closeAll = false;
+                    self.lastNeg = i;
+
+                    openNPC = true;
+                    break;
+                }
+            }
+            if(closeAll){
+                openNPC = false;
+                inventory.clickItems.bool = true;
+                inventory.clickItems.option = "";
+                document.getElementById("mag_back").style.display = "block";
+                document.getElementById("prendi_mag").style.display = "none";
+                document.getElementById("inventarioNPC").style.display = "none";
+                document.getElementById("Teleporter").style.display = "none";
+                document.getElementById("Fabbro").style.display = "none";
+                document.getElementById("Magazzino").style.display = "none";
+            }
+            
+            self.drawAbi();
+
+        }
+
+        self.drawAbi = function(){
+
+            for(var i in self.skill){
+                let sk = self.skill[i];
+                if(!self.lastAbi[i]){
+                    let td = document.getElementById("abi"+i);
+
+                    if(document.getElementById(sk.nome) == null){
+                        let img = document.createElement("IMG");
+                            img.classList.add("img-blocks");
+                            img.classList.add("abi-refresh-delete");
+                            img.classList.add("x64");
+                            img.id = sk.nome;
+                            img.src = sk.imgInv;
+                            img.addEventListener('click', function(e){socket.emit("doSkill", sk.nome);});
+                            img.addEventListener('mouseover', function(e){this.style.opacity = 0.5;});
+                            img.addEventListener('mouseout', function(e){this.style.opacity = 1;});
+                            img.addEventListener('mousedown', function(e){this.style.transform = "scale(0.9, 0.9)";});
+                            img.addEventListener('mouseup', function(e){this.style.transform = "scale(1, 1)";});
+                            atrTooltip(img, sk.commento);
+                            td.appendChild(img);
+                    }      
+                    self.lastAbi[i] = true;
+                }
+            }
+        }
+        
+        self.drawAbi();
+
+
+        Player.list[self.id] = self;
+        return self;
+    }
+    Player.list = {};
+
+    var Bullet = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        
+        self.frWidth = initPack.frWidth;
+        self.frHeight = initPack.frHeight;
+        self.ratio = initPack.ratio;
+        self.animationSpeed = initPack.animationSpeed;
+
+        self.spriteCounterAnimation = 0;
+
+        self.img = new Image();
+        self.img.src = initPack.imgSrc;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            var width = self.img.width,
+                height = self.img.height;
+                
+            self.spriteCounterAnimation += self.animationSpeed;
+            var walkingMod = Math.floor(self.spriteCounterAnimation) % (self.frWidth*self.frHeight) || 0;
+
+            self.frameWidth = width/self.frWidth;
+            self.frameHeight = height/self.frHeight;
+
+            var img_width = self.frameWidth*self.ratio,
+                img_height = self.frameHeight*self.ratio;
+
+            ctx.drawImage(self.img,
+                walkingMod*self.frameWidth,0*self.frameHeight,self.frameWidth,self.frameHeight,
+                x-img_width/2,y-img_height/2,img_width,img_height);
+        
+        }
+
+        Bullet.list[self.id] = self;
+        return self;
+    }
+    Bullet.list = {};
+
+
+    var NPC = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.nome = initPack.nome;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        self.negozio = initPack.negozio;
+
+        self.img = new Image();
+        self.img.src = initPack.img;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            let width = 64;
+            let height = (width * self.img.height) / self.img.width;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            ctx.drawImage(self.img,
+                0,0,self.img.width,self.img.height,
+                x-width/2,y-height/2,width,height);
+        }
+
+        self.drawInventory = function(){
+
+            var elements = document.getElementsByClassName("inv-npc-refresh-delete");
+		    while (elements.length > 0) elements[0].remove();
+
+            var addButton = function(data, i){
+                let td = document.getElementById(i);
+
+                let text = document.createElement("SPAN");
+                    text.innerText = "x"+data.amount;
+                    text.style.position="absolute";
+                    text.classList.add("inv-span");
+                    text.classList.add("inv-npc-refresh-delete");
+                    text.classList.add("priorita5");
+                    td.appendChild(text);
+                let img = document.createElement("IMG");
+                    img.classList.add("img-blocks");
+                    img.classList.add("inv-npc-refresh-delete");
+                    img.classList.add("x64");
+                    img.src = data.item.imgInv;
+                    img.addEventListener('click', function(e){
+                        socket.emit("compraItem", {
+                            amount:data.amount, 
+                            item:data.item, 
+                            id:data.id,
+                            gemme:data.gemme,
+                            monete:data.monete
+                        });
+                    });
+                    img.addEventListener('mouseover', function(e){this.style.opacity = 0.5;});
+                    img.addEventListener('mouseout', function(e){this.style.opacity = 1;});
+                    img.addEventListener('mousedown', function(e){this.style.transform = "scale(0.9, 0.9)";});
+                    img.addEventListener('mouseup', function(e){this.style.transform = "scale(1, 1)";});
+                    atrTooltip(img, data.item.commento);
+                    td.appendChild(img);
+            }
+
+            for(var i in self.negozio){
+                addButton({
+                    amount:self.negozio[i].quantita, 
+                    item:self.negozio[i].item, 
+                    id:self.negozio[i].nome,
+                    gemme:self.negozio[i].valore_gemme,
+                    monete:self.negozio[i].valore_monete
+                }, i+"NPC");
+            }
+
+        }
+        //if(self.negozio!=null) self.drawInventory();
+
+        self.openInventory = function(refresh){
+
+            if(self.negozio != null){
+                if(refresh) self.drawInventory();
+                document.getElementById("inventarioNPC").style.display = "block";
+                document.getElementById("Teleporter").style.display = "none";
+                document.getElementById("Fabbro").style.display = "none";
+                document.getElementById("Magazzino").style.display = "none";
+            }
+            else if(self.nome=="Teleporter"){
+                document.getElementById("inventarioNPC").style.display = "none";
+                document.getElementById("Teleporter").style.display = "block";
+                document.getElementById("Fabbro").style.display = "none";
+                document.getElementById("Magazzino").style.display = "none";
+            }
+            else if(self.nome=="Magazzino"){
+                document.getElementById("inventarioNPC").style.display = "none";
+                document.getElementById("Teleporter").style.display = "none";
+                document.getElementById("Fabbro").style.display = "none";
+                document.getElementById("Magazzino").style.display = "block";
+            }
+            else if(self.nome=="Fabbro"){
+                document.getElementById("inventarioNPC").style.display = "none";
+                document.getElementById("Teleporter").style.display = "none";
+                document.getElementById("Fabbro").style.display = "block";
+                document.getElementById("Magazzino").style.display = "none";
+            }
+        }
+        
+        NPC.list[self.id] = self;
+        return self;
+    }
+    NPC.list = {};
+
+    var prendiMagazzino = function(){
+        //prendi e posa, poi teleport. Il fabbro (per fare incantesimi) prossimamente
+        //fai le skillllllll
+        let magback = document.getElementById("mag_back"),
+            prendimag = document.getElementById("prendi_mag");
+
+        magback.style.display = "none";
+        prendimag.style.display = "block";
+
+        inventory.clickItems.bool = false;
+        inventory.clickItems.option = "Inventario";
+    }
+    var inserisciMagazzino = function(){
+        
+        let magback = document.getElementById("mag_back"),
+            prendimag = document.getElementById("prendi_mag");
+
+        magback.style.display = "none";
+        prendimag.style.display = "none";
+        
+        inventory.clickItems.bool = false;
+        inventory.clickItems.option = "Magazzino";
+        inventory.open();
+    }
+
+    var Drop = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+
+        self.img = new Image();
+        self.img.src = initPack.imgSrc;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            let width = 43;
+            let height = (width * self.img.height) / self.img.width;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            ctx.drawImage(self.img,
+                0,0,self.img.width,self.img.height,
+                x-width/2,y-height/2,width,height);
+        }
+
+        Drop.list[self.id] = self;
+        return self;
+    }
+    Drop.list = {};
+
+
+    var Abilita = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+
+        self.img = new Image();
+        self.img.src = initPack.img;
+
+        self.animationSpeed = initPack.animationSpeed;
+        self.frWidth = initPack.frWidth;
+        self.frHeight = initPack.frHeight;
+        self.ratio = initPack.ratio;
+        self.loop = initPack.loop;
+
+        self.spriteCounterAnimation = 0;
+        self.lastWalkingMod = 0;
+        self.trackHeight = 0;
+        self.walkingMod = 0;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            var width = self.img.width,
+                height = self.img.height;
+                
+            self.spriteCounterAnimation += self.animationSpeed;
+            
+            if(Math.floor(self.spriteCounterAnimation) > self.frWidth-1){
+                self.spriteCounterAnimation -= self.frWidth;
+                self.trackHeight++;
+
+                if(self.trackHeight > self.frHeight-1){
+                    self.loop--;
+                    self.trackHeight = 0;
+                }
+            }
+
+            if(self.loop <= 0 && self.loop > -1) socket.emit("removeAbility", self.id);
+            else{
+                self.walkingMod = Math.floor(self.spriteCounterAnimation);
+
+                self.frameWidth = width/self.frWidth;
+                self.frameHeight = height/self.frHeight;
+
+                var img_width = self.frameWidth*self.ratio,
+                    img_height = self.frameHeight*self.ratio;
+
+                ctx.drawImage(self.img,
+                self.walkingMod*self.frameWidth,self.trackHeight*self.frameHeight,self.frameWidth,self.frameHeight,
+                    x-img_width/2,y-img_height/2,img_width,img_height);
+            }
+        }
+
+        Abilita.list[self.id] = self;
+        return self;
+    }
+    Abilita.list = {};
+
+
+    var Dungeon = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+
+        self.img = new Image();
+        self.img.src = initPack.img;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            let width = 64;
+            let height = (width * self.img.height) / self.img.width;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            ctx.drawImage(self.img,
+                0,0,self.img.width,self.img.height,
+                x-width/2,y-height/2,width,height);
+        }
+
+        Dungeon.list[self.id] = self;
+        return self;
+    }
+    Dungeon.list = {};
+
+
+    var CanvasText = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        self.msg = initPack.msg;
+        self.color = initPack.color;
+
+        self.draw = function(){
+
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            ctx.fillStyle = self.color;
+            ctx.font = "25px Arial";
+            ctx.fillText(self.msg, x, y);
+        }
+
+        CanvasText.list[self.id] = self;
+        return self;
+    }
+    CanvasText.list = {};
+
+    var Enemy = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        self.hp = initPack.hp;
+        self.hpMax = initPack.hpMax;
+        self.angle = initPack.angle;
+
+        self.spdX = 0;
+        self.spdY = 0;
+
+        self.img = new Image();
+        self.animation_idle = initPack.animation_idle;
+        self.animation_walking = initPack.animation_walking;
+        self.animation_combat1 = initPack.animation_combat1;
+        self.animation_combat2 = initPack.animation_combat2;
+        self.animation_combat3 = initPack.animation_combat3;
+        self.spriteCounterAnimation = 0;
+        self.ratio = 2; //scale
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            var hpWidth = 30*self.hp / self.hpMax;
+            ctx.fillStyle = 'red';
+            ctx.fillRect(x-hpWidth, y+10,hpWidth,4);
+
+            var corrent = self.animation_walking;
+            if(self.spdX == 0 && self.spdY == 0) corrent = self.animation_idle;
+
+            var property = corrent.property;
+
+            var aimAngle = self.angle;
+            if(aimAngle<0) aimAngle += 360;
+
+            //dvar directionMode = 3; //right
+            self.frWidth = property.nfrW_right;
+            self.frHeight = property.nfrH_right;
+            self.ratio = property.ratio_right;
+            self.img.src = corrent.img_right;
+
+            if(aimAngle >= 45 && aimAngle < 135){//down
+                //directionMode = 2;
+                self.frWidth = property.nfrW_down;
+                self.frHeight = property.nfrH_down;
+                self.spriteCounterAnimation += property.aS_down;
+                self.ratio = property.ratio_down;
+                self.img.src = corrent.img_down;
+            }
+            else{
+                if(aimAngle >= 135 && aimAngle < 225){//left
+                    //directionMode = 1;
+                    self.frWidth = property.nfrW_left;
+                    self.frHeight = property.nfrH_left;
+                    self.ratio = property.ratio_left;
+                    self.spriteCounterAnimation += property.aS_left;
+                    self.img.src = corrent.img_left;
+                }
+                else{
+                    if(aimAngle >= 225 && aimAngle < 315){//up
+                        //directionMode = 0;
+                        self.frWidth = property.nfrW_up;
+                        self.frHeight = property.nfrH_up;
+                        self.ratio = property.ratio_up;
+                        self.spriteCounterAnimation += property.aS_up;
+                        self.img.src = corrent.img_up;
+                    }
+                    else self.spriteCounterAnimation += property.aS_right;
+                }
+            }
+            
+            var walkingMod = Math.floor(self.spriteCounterAnimation) % (self.frWidth*self.frHeight) || 0;
+
+            var width = self.img.width,
+                height = self.img.height;
+                
+            self.frameWidth = width/self.frWidth;
+            self.frameHeight = height/self.frHeight;
+
+            var img_width = self.frameWidth*self.ratio,
+                img_height = self.frameHeight*self.ratio;
+
+            ctx.drawImage(self.img,
+                walkingMod*self.frameWidth,0*self.frameHeight,self.frameWidth,self.frameHeight,
+                x-img_width/2,y-img_height/2,img_width,img_height);
+        }
+
+        Enemy.list[self.id] = self;
+        return self;
+    }
+    Enemy.list = {};
+
+    var selfId = null;
+
+    socket.on('init',function(data){
+        if(data.selfId) selfId = data.selfId;
+
+        //{ player:[{id, number, x, y},{}], bullet:[] }
+        for(var i = 0; i < data.player.length; i++){
+            new Player(data.player[i]);
+        }
+
+        for(var i = 0; i < data.bullet.length; i++){
+            new Bullet(data.bullet[i]);
+        }
+        
+        for(var i = 0; i < data.enemy.length; i++){
+            new Enemy(data.enemy[i]);
+        }
+
+        for(var i = 0; i < data.drop.length; i++){
+            new Drop(data.drop[i]);
+        }
+
+        for(var i = 0; i < data.abilita.length; i++){
+            new Abilita(data.abilita[i]);
+        }
+
+        for(var i = 0; i < data.dungeon.length; i++){
+            new Dungeon(data.dungeon[i]);
+        }
+
+        for(var i = 0; i < data.npc.length; i++){
+            new NPC(data.npc[i]);
+        }
+
+        for(var i = 0; i < data.canvasText.length; i++){
+            new CanvasText(data.canvasText[i]);
+        }
+    });
+
+    socket.on('update',function(data){
+        //{ player:[{id, number, x, y},{}], bullet:[] }
+        for(var i = 0; i < data.player.length; i++){
+            var pack = data.player[i];
+            var p = Player.list[pack.id];
+            if(p){
+                if(pack.x !== undefined) p.x = pack.x;
+                if(pack.y !== undefined) p.y = pack.y;
+                if(pack.hp !== undefined) p.hp = pack.hp;
+                if(pack.hpMax !== undefined) p.hpMax = pack.hpMax;
+                if(pack.mp !== undefined) p.mp = pack.mp;
+                if(pack.mpMax !== undefined) p.mpMax = pack.mpMax;
+                if(pack.defence !== undefined) p.defence = pack.defence;
+                if(pack.damage !== undefined) p.damage = pack.damage;
+                if(pack.regHp !== undefined) p.regHp = pack.regHp;
+                if(pack.regMp !== undefined) p.regMp = pack.regMp;
+                if(pack.puntiStat !== undefined) p.puntiStat = pack.puntiStat;
+                if(pack.gold !== undefined) p.gold = pack.gold;
+                if(pack.gemme !== undefined) p.gemme = pack.gemme;
+                if(pack.exp !== undefined) p.exp = pack.exp;
+                if(pack.livello !== undefined) p.livello = pack.livello;
+                if(pack.score !== undefined) p.score = pack.score;
+                if(pack.map !== undefined) p.map = pack.map;
+                if(pack.mouseAngle !== undefined) p.mouseAngle = pack.mouseAngle;
+                if(pack.spdX !== undefined) p.spdX = pack.spdX;
+                if(pack.spdY !== undefined) p.spdY = pack.spdY;
+                if(pack.skill !== undefined) p.skill = pack.skill;
+
+                if(pack.animation_idle !== undefined) p.animation_idle = pack.animation_idle;
+                if(pack.animation_walking !== undefined) p.animation_walking = pack.animation_walking;
+
+            }
+        }
+        for(var i = 0; i < data.bullet.length; i++){
+            var pack = data.bullet[i];
+            var b = Bullet.list[pack.id];
+            if(b){
+                if(pack.x !== undefined) b.x = pack.x;
+                if(pack.y !== undefined) b.y = pack.y;
+            }
+        }
+        for(var i = 0; i < data.enemy.length; i++){
+            var pack = data.enemy[i];
+            var e = Enemy.list[pack.id];
+            if(e){
+                if(pack.x !== undefined) e.x = pack.x;
+                if(pack.y !== undefined) e.y = pack.y;
+                if(pack.hp !== undefined) e.hp = pack.hp;
+                if(pack.angle !== undefined) e.angle = pack.angle;
+                if(pack.spdX !== undefined) e.spdX = pack.spdX;
+                if(pack.spdY !== undefined) e.spdY = pack.spdY;
+            }
+        }
+        for(var i = 0; i < data.canvasText.length; i++){
+            var pack = data.canvasText[i];
+            var ct = CanvasText.list[pack.id];
+            if(ct){
+                if(pack.x !== undefined) ct.x = pack.x;
+                if(pack.y !== undefined) ct.y = pack.y;
+            }
+        }
+
+        for(var i = 0; i < data.abilita.length; i++){
+            var pack = data.abilita[i];
+            var a = Abilita.list[pack.id];
+            if(a){
+                if(pack.x !== undefined) a.x = pack.x;
+                if(pack.y !== undefined) a.y = pack.y;
+            }
+        }
+    });
+
+    socket.on('remove',function(data){
+        //data.enemy = data.enemy || [];
+        for(var i = 0; i < data.player.length; i++)
+            delete Player.list[data.player[i]];
+
+        for(var i = 0; i < data.bullet.length; i++)
+            delete Bullet.list[data.bullet[i]];
+        
+        for(var i = 0; i < data.enemy.length; i++)
+            delete Enemy.list[data.enemy[i]];
+        
+        for(var i = 0; i < data.drop.length; i++)
+            delete Drop.list[data.drop[i]];
+
+        for(var i = 0; i < data.abilita.length; i++)
+            delete Abilita.list[data.abilita[i]];
+
+        for(var i = 0; i < data.dungeon.length; i++)
+            delete Dungeon.list[data.dungeon[i]];
+
+        for(var i = 0; i < data.npc.length; i++)
+            delete NPC.list[data.npc[i]];
+
+        for(var i = 0; i < data.canvasText.length; i++)
+            delete CanvasText.list[data.canvasText[i]];
+    });
+
+    socket.on("map_options", function(data){
+        creaMondo(data);
+    });
+
+    var walk = 0;
+
+    loadSpritesheet = function(params){
+        let len =  params.length;
+        let Imgs = [];
+        for(var i in params){
+            let param = params[i];
+            Imgs[param.name] = new Image();
+            Imgs[param.name].src = param.image;
+        }
+
+        return Imgs;
+    }
+
+    var creaMondo = function(param){
+
+        //console.log(param);
+
+        mondo = param;
+        mondo.ctx = ctx;
+        mondo.Imgs = loadSpritesheet(param.Tilesets);
+    }
+
+    //MAIN LOOP
+    setInterval(function(){
+        if(!selfId) return;
+
+        ctx.clearRect(0,0,WIDTH,HEIGHT);
+        
+        var player = Player.list[selfId];
+        var x = WIDTH/2 - player.x,
+            y = HEIGHT/2 - player.y;
+
+        mondo_draw(x,y, mondo);
+
+        update_GUI();
+
+        for(var i in NPC.list)
+            NPC.list[i].draw();
+        for(var i in Player.list)
+            Player.list[i].draw();
+        for(var i in Bullet.list)
+            Bullet.list[i].draw();
+        for(var i in Enemy.list)
+            Enemy.list[i].draw();
+        for(var i in Drop.list)
+            Drop.list[i].draw();
+        for(var i in Abilita.list)
+            Abilita.list[i].draw();
+        for(var i in Dungeon.list)
+            Dungeon.list[i].draw();
+        for(var i in CanvasText.list)
+            CanvasText.list[i].draw();
+
+        mondo_drawAbove(x,y, mondo);
+
+    },40);
+    
+
+    /*
+    var drawMago = function(){
+        var frameHeight = Img.player.height/Img.player.frH, frameWidth = Img.player.width/Img.player.frW;
+        
+        let walking = Math.floor(walk) % Img.player.frW;
+        //if(walk > 3) walk = 0;
+        ctx.drawImage(Img.player,
+            walking*frameWidth,0,frameWidth,frameHeight,
+            0,0,frameWidth,frameHeight);
+        walk+=0.4;
+    }*/
+
+    document.onkeydown = function(event){
+        if(!writing){
+            if(event.keyCode === 68) //d
+                socket.emit('keyPress', {inputId:"right", state:true});
+            else if(event.keyCode === 83) //s
+                socket.emit('keyPress', {inputId:"down", state:true});
+            else if(event.keyCode === 65) //a
+                socket.emit('keyPress', {inputId:"left", state:true});
+            else if(event.keyCode === 87) //w
+                socket.emit('keyPress', {inputId:"up", state:true});
+        
+            if(event.keyCode === 82) //r => raccogliOggetto
+                socket.emit('keyPress', {inputId:"collectItem", state:true});
+        } 
+    }
+    document.onkeyup = function(event){
+        if(!writing){
+            if(event.keyCode === 68) //d
+                socket.emit('keyPress', {inputId:"right", state:false});
+            else if(event.keyCode === 83) //s
+                socket.emit('keyPress', {inputId:"down", state:false});
+            else if(event.keyCode === 65) //a
+                socket.emit('keyPress', {inputId:"left", state:false});
+            else if(event.keyCode === 87) //w
+                socket.emit('keyPress', {inputId:"up", state:false});
+
+            if(event.keyCode === 82) //r => raccogliOggetto
+                socket.emit('keyPress', {inputId:"collectItem", state:false});
+        }    
+    }
+    document.onkeypress = function(event){
+        if(!writing){
+            //console.log(event.keyCode)
+            if(!openNPC || inventory.clickItems.option == "Magazzino"){
+                if(event.keyCode === 101) //e => openInventory
+                    inventory.open();
+                if(event.keyCode === 103) //g => openStatus
+                    status_pg.open();
+            }
+            if(event.keyCode == 49 && inventory.short_inv[0]) //1 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[0].id, item:inventory.short_inv[0].item});
+            if(event.keyCode == 50 && inventory.short_inv[1]) //2 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[1].id, item:inventory.short_inv[1].item});
+            if(event.keyCode == 51 && inventory.short_inv[2]) //3 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[2].id, item:inventory.short_inv[2].item});
+            if(event.keyCode == 52 && inventory.short_inv[3]) //4 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[3].id, item:inventory.short_inv[3].item});
+            if(event.keyCode == 53 && inventory.short_inv[4]) //5 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[4].id, item:inventory.short_inv[4].item});
+
+            }
+    }
+
+    document.onmousedown = function(event){
+        socket.emit('keyPress', {inputId:"attack", state:true});
+    }
+    document.onmouseup = function(event){
+        socket.emit('keyPress', {inputId:"attack", state:false});
+    }
+    document.onmousemove = function(event){
+        var x = -WIDTH/2 + event.clientX - 8;
+        var y = -HEIGHT/2 + event.clientY - 8;
+        var angle = Math.atan2(y,x) / Math.PI * 180;
+        socket.emit('keyPress', {inputId:"mouseAngle", state:angle});
+        //console.log("mouse: "+x,y);
+    }   
+    document.oncontextmenu = function(event){
+        event.preventDefault();
+    }
+
+    window.addEventListener("resize",function(){resizeCanvas();});
+    resizeCanvas();
+</script>
+

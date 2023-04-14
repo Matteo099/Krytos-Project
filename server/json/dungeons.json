@@ -1,0 +1,9 @@
+{
+    "IslandDungeon":{
+        "nome": "Island Dungeon",
+        "maxPlayer": 4,
+        "livelloMin": 1,
+        "livelloMax": 99999,
+        "img": "client/img/dungeon/IslandDungeon.png"
+    }
+}

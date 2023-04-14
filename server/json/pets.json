@@ -1,0 +1,122 @@
+{
+    "RattoCangu":{
+        "nome":"Rattocangu",
+        "regHp":0,
+        "regMp":0,
+        "damage":1,
+        "atkSpd":10,
+        "timeToAttack":25,
+        "timeToSuperAttack":1000,
+        "numShotSuperAttack":3,
+        "bulletSpeed":10,
+        "bulletTimeToRemove":30,
+        "bulletImgSrc":"client/img/items/bullet.png",
+        "bulletFrWidth":1,
+        "bulletFrHeight":1,
+        "bulletRatio":1,
+        "bulletAnimationSpeed":0,
+        "range":200,
+        "speed":1,
+        "fai_magia":20,
+        "livello":0,
+        "animation":{
+            "img":"client/img/pet/RattoCangu.png",
+            "up":3,
+            "left":1,
+            "down":0,
+            "right":2,
+            "animationSpeed":0.2,
+            "numFrameWidth":3,
+            "numFrameHeight":4,
+            "ratio":2,
+            "idle":1
+        },
+        "miglioramenti":{
+            "1":{
+                "monete": 10,
+                "gemme": 1,
+                "items": [
+                    {"nome":"Libro", "quantita":1}
+                ],
+                "esperienza": 10,
+
+                "range": 200,
+                "speed": 1.4,
+                "bonus": {
+                    "damage": 2, 
+                    "regMp":1, 
+                    "regHp":0, 
+                    "atkSpd":10, 
+                    "timeToAttack":25,
+                    "timeToSuperAttack":1000,
+                    "numShotSuperAttack":3,
+                    "bulletSpeed":10,
+                    "bulletTimeToRemove":30
+                },
+                "abilita":["raccogli","attacca","bonus"]
+            }
+        },
+        "abilita":["raccogli","attacca","magia"],
+        "magia": "Acido"
+    },
+    "GaglinaChioccia":{
+        "nome":"GaglinaChioccia",
+        "regHp":0,
+        "regMp":0,
+        "damage":2,
+        "atkSpd":10,
+        "timeToAttack": 50,
+        "timeToSuperAttack":1000,
+        "numShotSuperAttack":3,
+        "bulletSpeed":10,
+        "bulletTimeToRemove":30,
+        "bulletImgSrc":"client/img/pet/egg.png",
+        "bulletFrWidth":3,
+        "bulletFrHeight":2,
+        "bulletRatio":0.12,
+        "bulletAnimationSpeed":0.2,
+        "range":200,
+        "speed":2,
+        "fai_magia":20,
+        "livello":0,
+        "animation":{
+            "img":"client/img/pet/GaglinaChioccia.png",
+            "up":3,
+            "left":2,
+            "down":1,
+            "right":0,
+            "animationSpeed":0.5,
+            "numFrameWidth":4,
+            "numFrameHeight":4,
+            "ratio":1,
+            "idle":1
+        },
+        "miglioramenti":{
+            "1":{
+                "monete": 10,
+                "gemme": 1,
+                "items": [
+                    {"nome":"Libro1", "quantita":1}
+                ],
+                "esperienza": 10,
+
+                "range": 200,
+                "speed": 1.4,
+                "bonus": {
+                    "damage":3, 
+                    "regMp":1, 
+                    "regHp":0, 
+                    "atkSpd":10, 
+                    "timeToAttack":50,
+                    "timeToSuperAttack":1000,
+                    "numShotSuperAttack":3,
+                    "bulletSpeed":10,
+                    "bulletTimeToRemove":30
+                },
+                "abilita":["raccogli","attacca","magia","bonus"]
+            }
+        },
+        "abilita":["raccogli","attacca","magia"],
+        "magia": null
+    }
+}

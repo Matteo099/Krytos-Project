@@ -1,0 +1,15 @@
+C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\node_modules\mongodb\lib\utils.js:123
+    process.nextTick(function() { throw err; });
+                                  ^
+
+TypeError: Converting circular structure to JSON
+    at JSON.stringify (<anonymous>)
+    at Object.Stalliere.self.refreshRender (C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\client\js\Stalliere.js:98:90)
+    at Object.Stalliere.self.getSkill (C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\client\js\Stalliere.js:71:14)
+    at new Stalliere (C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\client\js\Stalliere.js:445:14)
+    at Player (C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\server\Entity.js:1655:26)
+    at Function.Player.onConnect (C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\server\Entity.js:1742:18)
+    at C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\app.js:183:24
+    at C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\server\DatabaseMongoDB.js:81:3
+    at C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\node_modules\mongojs\lib\collection.js:50:5
+    at handleCallback (C:\Users\gorge\Desktop\MATTEO\Node js\Progetto\node_modules\mongodb\lib\utils.js:120:56)

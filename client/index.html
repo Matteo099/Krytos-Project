@@ -1,0 +1,2148 @@
+<head>
+    <!--<style>* {padding: 0; margin: 0}</style>
+    -->
+    <meta charset="UTF-8">
+
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="client/css/style.css" type='text/css'>
+    <link rel="shortcut icon" href="client/img/favicon.ico" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        //DISABILITA Ispeziona elemento
+        /*
+        window.oncontextmenu = function () {
+            return false;
+        }
+        $(document).keydown(function (event) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.shiftKey && event.keyCode == 74)) {
+                return false;
+            }
+        });
+        */
+    </script>
+
+</head>
+<body>
+
+        <div id="myAlert" class="myAlert-modal priorita20">
+                <div class="myAlert-content">
+                    <div class="myAlert-header">
+                        <span class="myAlert-close" onclick="var modal = document.getElementById('myAlert');modal.style.display = 'none';">&times;</span>
+                        <h2 id="myAlert-titolo">Attenzione!</h2>
+                    </div>
+                    <div class="myAlert-body">
+                        <p id="myAlert-text">Testo</p>
+                    </div>
+                    <div class="myAlert-footer">
+                        <div id="myAlert-button" onclick="var modal = document.getElementById('myAlert');modal.style.display = 'none';">
+                              <span style="text-align:center;cursor:pointer;">Ok</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="myConfirm" class="myConfirm-modal priorita20">
+                <div class="myConfirm-content">
+                    <div class="myConfirm-header">
+                        <span class="myConfirm-close" onclick="var modal = document.getElementById('myConfirm');modal.style.display = 'none';">&times;</span>
+                        <h2 id="myConfirm-titolo">Attenzione!</h2>
+                    </div>
+                    <div class="myConfirm-body">
+                        <p id="myConfirm-text">Testo</p>
+                    </div>
+                    <div class="myConfirm-footer">
+                        <div id="myConfirm-button">
+                            <span style="text-align:center;cursor:pointer;">Ok</span>
+                        </div>
+                        <div id="myConfirm-button2" onclick="var modal = document.getElementById('myConfirm');modal.style.display = 'none';">
+                            <span style="text-align:center;cursor:pointer;">Annulla</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="myPrompt" class="myPrompt-modal priorita20">
+                <div class="myPrompt-content">
+                    <div class="myPrompt-header">
+                        <span class="myPrompt-close" onclick="var modal = document.getElementById('myPrompt');modal.style.display = 'none';">&times;</span>
+                        <h2 id="myPrompt-titolo">Attenzione!</h2>
+                    </div>
+                    <div class="myPrompt-body">
+                        <p id="myPrompt-text">Testo</p>
+                        <br>
+                        <input type="text" id="myPrompt-bar">
+                    </div>
+                    <div class="myPrompt-footer">
+                        <div id="myPrompt-button">
+                            <span style="text-align:center;cursor:pointer;">Ok</span>
+                        </div>
+                        <div id="myPrompt-button2" onclick="var modal = document.getElementById('myPrompt');modal.style.display = 'none';">
+                            <span style="text-align:center;cursor:pointer;">Annulla</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div id ="singDiv">
+        <!--
+        Username: <input id="singDiv-username" type="text"></input><br>
+        Password: <input id="singDiv-password" type="password"></input>
+        <button id="singDiv-singIn">Sing In</button>
+        <button id="singDiv-singUp">Sing Up</button>
+        -->
+
+        <div class="form">
+      
+            <ul class="tab-group">
+                <li class="tab active"><a href="#signup">Registrati</a></li>
+                <li class="tab"><a href="#login">Accedi</a></li>
+            </ul>
+                
+            <div class="tab-content">
+                <div id="signup">   
+                <h1>Registrati</h1>
+                
+                <form id="singDiv-singUp" action="javascript:registratiForm()" method="post">
+
+                <div class="field-wrap">
+                    <label>
+                        Nickname<span class="req">*</span>
+                    </label>
+                    <input id="registrati-username" type="text" required autocomplete="off" />
+                </div>
+
+
+                <div class="field-wrap">
+                    <label>
+                        Email Address<span class="req">*</span>
+                    </label>
+                    <input id="registrati-email" type="email"required autocomplete="off"/>
+                </div>
+        
+                <div class="field-wrap">
+                    <label>
+                    Password<span class="req">*</span>
+                    </label>
+                    <input id="registrati-password" type="password"required autocomplete="off"/>
+                </div>
+                
+                <div class="field-wrap">
+                    <label>
+                    Ripeti Password<span class="req">*</span>
+                    </label>
+                    <input id="registrati-password2" id="singDiv-password" type="password"required autocomplete="off"/>
+                </div>
+                
+                <button type="submit" class="button button-block"/>Registrati!</button>
+                
+                </form>
+        
+            </div>
+                  
+            <div id="login">   
+                <h1>Welcome Back!</h1>
+                
+                <form action="javascript:accediForm()" method="post">
+                
+                    <div class="field-wrap">
+                    <label>
+                    Email Address<span class="req">*</span>
+                    </label>
+                    <input id="accedi-email" id="singDiv-username" type="email"required autocomplete="off"/>
+                </div>
+                
+                <div class="field-wrap">
+                    <label>
+                    Password<span class="req">*</span>
+                    </label>
+                    <input id="accedi-password" type="password"required autocomplete="off"/>
+                </div>
+                
+                <p class="forgot"><a href="#">Non sei Registrato?</a></p>
+                
+                <button id="singDiv-singIn" class="button button-block"/>Accedi!</button>
+                
+                </form>
+        
+            </div>
+                  
+            </div><!-- tab-content -->  
+        </div> <!-- /form -->
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+            <script src="client/js/login-up.js"></script>
+    </div>
+ 
+    <div id="gameDiv" style="display:none">
+
+        <div id="game" style="position:absolute;width:500px;height:500px;">
+            
+            <canvas id="ctx" width="500" height="500" style="position:absolute"></canvas>
+            
+            <!--<canvas id="ctx-ui" width="500" height="500" style="position:absolute"></canvas>
+            -->
+
+            <div id="tooltip" class="priorita10"></div>
+
+            <div id="ui" style="position:absolute;width:500px;height:500px;">
+                
+                <div style="padding:3px;">
+                    <div class="gold">
+                        <img src="client/img/items/Altro/Gemma.png" style="width:50px;vertical-align: middle;"/><span style="margin-left:2px" id="Gemme">0</span>
+                    </div>
+                    <div class="gold">
+                        <img src="client/img/items/Altro/Moneta.png" style="width:30px;vertical-align: middle;"/><span style="margin-left:2px" id="Monete">0</span>&nbsp;<br>                        
+                    </div>
+
+                    <span style="margin-left:2px;float:right;display:none" class="fontFancy" id="Ping">0</span>
+                </div>
+                <!--
+                    <button onclick="changeMap()" style="position:absolute;bottom:0px;left:0px">Change Map</button>
+                -->
+
+                <div id="short-abi">
+                    <table>
+                        <tr><td id="abi0" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="abi1" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="abi2" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="abi3" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="abi4" class="x86 short-inv-block"></td></tr>
+                    </table>
+                </div>
+
+                <div id="short-inv">
+                    <table>
+                        <tr><td id="s0" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="s1" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="s2" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="s3" class="x86 short-inv-block"></td></tr>
+                        <tr><td id="s4" class="x86 short-inv-block"></td></tr>
+                    </table>
+                </div>
+
+                <div id="PannelloPG">
+                        <div class="statistiche">
+                            <span id="Livello">Livello: 1</span>
+                        </div>
+                        <div class="statistiche">
+                            <div id="EsperienzaBarraOut">
+                                <div id="EsperienzaBarra"></div>
+                            </div>
+                                <span id="EsperienzaText" class="statistiche2">EXP 100/100</span>
+                        </div>
+                        <div class="statistiche">
+                            <div id="MagiaBarraOut">
+                                <div id="MagiaBarra"></div>
+                            </div>
+                                <span id="MagiaText" class="statistiche2">MP 300/300</span>
+                        </div>
+                        <div class="statistiche">
+                            <div id="VitaBarraOut">
+                                <div id="VitaBarra"></div>
+                            </div>
+                                <span id="VitaText" class="statistiche2">HP 100/100</span>
+                        </div>                         
+                </div>
+
+                <div id="inventario" style="display:none;position:absolute;"></div>
+                <div id="inventarioNPC" style="display:none;position:absolute;">
+                    <table class="inline inventory-tab">
+                        <tr>
+                            <td id="0NPC" class="x86 inv-block"></td>
+                            <td id="1NPC" class="x86 inv-block"></td>
+                            <td id="2NPC" class="x86 inv-block"></td>
+                            <td id="3NPC" class="x86 inv-block"></td>
+                            <td id="4NPC" class="x86 inv-block"></td>
+                        </tr>
+                        <tr>
+                            <td id="5NPC" class="x86 inv-block"></td>
+                            <td id="6NPC" class="x86 inv-block"></td>
+                            <td id="7NPC" class="x86 inv-block"></td>
+                            <td id="8NPC" class="x86 inv-block"></td>
+                            <td id="9NPC" class="x86 inv-block"></td>
+                        </tr>
+                        <tr>
+                            <td id="10NPC" class="x86 inv-block"></td>
+                            <td id="11NPC" class="x86 inv-block"></td>
+                            <td id="12NPC" class="x86 inv-block"></td>
+                            <td id="13NPC" class="x86 inv-block"></td>
+                            <td id="14NPC" class="x86 inv-block"></td>
+                        </tr>
+                        <tr>
+                            <td id="15NPC" class="x86 inv-block"></td>
+                            <td id="16NPC" class="x86 inv-block"></td>
+                            <td id="17NPC" class="x86 inv-block"></td>
+                            <td id="18NPC" class="x86 inv-block"></td>
+                            <td id="19NPC" class="x86 inv-block"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="Fabbro" style="display:none;position:absolute;">
+                    
+                </div>
+                <div id="Teleporter" style="display:none;position:absolute;">
+                    <div class="inventory-tab" id="tp">
+                        <div class="gold2 tel">
+                            <span id="Citta" onclick="socket.emit('changeMap', 'Citta');">Citta</span>
+                        </div>
+                        <div class="gold2 tel">
+                            <span id="Island" onclick="socket.emit('changeMap', 'Island');">Island</span>
+                        </div>
+                        <div class="gold2 tel">
+                            <span id="Deserto" onclick="socket.emit('changeMap', 'Deserto');">Deserto</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="Stalliere" style="display:none;position:absolute;">
+                    <div class="inventory-tab" >
+                        <div id="hasntPet" style="text-align:center;" class="margin15">
+                            <span class="fontFancy">Non hai nessun pet</span>
+                        </div>
+                        <div id="hasPet" class="margin15"> 
+                            <div class="gold4">
+                                <span id="status_pet" onclick="document.getElementById('abilita_pet_div').style.display='none';document.getElementById('status_pet_div').style.display='block';">Status</span>
+                            </div>
+                            <div class="gold4">
+                                <span id="migliora_pet" onclick="socket.emit('miglioraPet');">Migliora</span>
+                            </div>
+                            <div class="gold4">
+                                <span id="abilita_pet" onclick="document.getElementById('status_pet_div').style.display='none';document.getElementById('abilita_pet_div').style.display='block'">Abilita</span>
+                            </div>
+                            <div class="gold4">
+                                <span id="elimina_pet" onclick="socket.emit('eliminaPet');">Elimina</span>
+                            </div>
+
+                            <div id="status_pet_div" class="margin15">
+                                <img src="client/img/pet/Singola/GaglinaChioccia.png" class="x64 margin10">
+                                <span id="status_pet_text" class="fontFancy inline-block">Livello: 1<br>regHp: 10</span>
+                            </div>
+
+                            <div id="abilita_pet_div" class="margin15">
+                                <div id="allAbiPet" style="display:inline-block">
+                                </div>
+                                <div id="spiegAbiPet" class="fontFancy" style="display:inline-block;position:absolute;margin-left:30px;margin-top:15px;">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="Magazzino" class="inventory-tab" style="display:none;position:absolute;">
+                    <div class="close" id="close_mag" onclick="chiudiMagazzino();"></div>
+                    <div id="mag_back">
+                        <div class="gold3">
+                            <span id="inserisci" onclick="inserisciMagazzino();">inserisci</span>
+                        </div>
+                        <div class="gold3" onclick="prendiMagazzino();">
+                            <span id="prendi">prendi</span>
+                        </div>
+                    </div>
+
+                    <div id="prendi_mag" style="display:none">
+                        <table class="inline">
+                            <tr>
+                                <td id="0mag" class="x86 inv-block"></td>
+                                <td id="1mag" class="x86 inv-block"></td>
+                                <td id="2mag" class="x86 inv-block"></td>
+                                <td id="3mag" class="x86 inv-block"></td>
+                                <td id="4mag" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="5mag" class="x86 inv-block"></td>
+                                <td id="6mag" class="x86 inv-block"></td>
+                                <td id="7mag" class="x86 inv-block"></td>
+                                <td id="8mag" class="x86 inv-block"></td>
+                                <td id="9mag" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="10mag" class="x86 inv-block"></td>
+                                <td id="11mag" class="x86 inv-block"></td>
+                                <td id="12mag" class="x86 inv-block"></td>
+                                <td id="13mag" class="x86 inv-block"></td>
+                                <td id="14mag" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="15mag" class="x86 inv-block"></td>
+                                <td id="16mag" class="x86 inv-block"></td>
+                                <td id="17mag" class="x86 inv-block"></td>
+                                <td id="18mag" class="x86 inv-block"></td>
+                                <td id="19mag" class="x86 inv-block"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="migliora" style="display:none;position:absolute;" class="inventory-tab">
+
+                    <div class="in-table2">
+                        <div class="gold3">
+                            <span id="status_">status</span>
+                        </div>
+                        <div class="gold3">
+                            <span id="abilita_">abilita</span>
+                        </div>
+                    </div>
+
+                    <div id="punti_migliora">
+
+                        <div class="in-table">
+                            <div class="gold2">
+                                <span id="puntiStat">Punti disponibili: 1</span>
+                            </div>
+                        </div>
+    
+                        <div class="in-table">
+                            <div class="gold">
+                                <span id="hpMax">HP: 130</span>
+                                <div class="migliora_stat" id="hpMax_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                            <div class="gold">
+                                <span id="mpMax">MP: 130</span>
+                                <div class="migliora_stat" id="mpMax_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                            <div class="gold">
+                                <span id="defence">DEF: 130</span>
+                                <div class="migliora_stat" id="defence_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                            <div class="gold">
+                                <span id="damage">ATK: 130</span>
+                                <div class="migliora_stat" id="damage_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                        </div>
+    
+                        <div class="in-table">
+                            <div class="gold">
+                                <span id="regHp">REG HP: 0.1</span>
+                                <div class="migliora_stat" id="regHp_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                            <div class="gold">
+                                <span id="regMp">REG MP: 0.1</span>
+                                <div class="migliora_stat" id="regMp_migliora" onclick="status_pg.migliora(this)">+</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="abilita_migliora">
+                        
+                            <div class="in-table">
+                                <div class="gold2">
+                                    <span id="puntiAbi">Punti disponibili: 0</span>
+                                </div>
+                            </div>
+        
+                            <div class="in-table">
+                                <div class="gold">
+                                    <span id="ab">Nessuna abilità</span>
+                                </div>
+
+                                <table>
+                                    <tr><td id="abilita0" class="x86"></td><td id="commento_skill" rowspan="5"></td></tr>
+                                    <tr><td id="abilita1" class="x86"></td></tr>
+                                    <tr><td id="abilita2" class="x86"></td></tr>
+                                    <tr><td id="abilita3" class="x86"></td></tr>
+                                    <tr><td id="abilita4" class="x86"></td></tr>
+                                </table>
+
+
+                            </div>
+                        </div>
+
+                    
+                </div>
+
+
+
+
+
+                <div id="trade" style="display:none;position:absolute;" class="inventory-tab priorita5">
+                    
+                    <div class="gold2">Scambio</div>
+
+                    <div class="margin5">
+
+                    <div id="inv_mio" class="inline-table">
+
+                        <div class="margin5">
+                            <span class="fontFancy">Stato: <span class="dot red" id="stato_mio"></span></span>
+                            <span id="gold_mio" class="fontFancy">Monete: 0</span>
+                        </div>
+
+                        <div>
+                        <table class="inline">
+                            <tr>
+                                <td id="0im" class="x86 inv-block"></td>
+                                <td id="1im" class="x86 inv-block"></td>
+                                <td id="2im" class="x86 inv-block"></td>
+                                <td id="3im" class="x86 inv-block"></td>
+                                <td id="4im" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="5im" class="x86 inv-block"></td>
+                                <td id="6im" class="x86 inv-block"></td>
+                                <td id="7im" class="x86 inv-block"></td>
+                                <td id="8im" class="x86 inv-block"></td>
+                                <td id="9im" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="10im" class="x86 inv-block"></td>
+                                <td id="11im" class="x86 inv-block"></td>
+                                <td id="12im" class="x86 inv-block"></td>
+                                <td id="13im" class="x86 inv-block"></td>
+                                <td id="14im" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="15im" class="x86 inv-block"></td>
+                                <td id="16im" class="x86 inv-block"></td>
+                                <td id="17im" class="x86 inv-block"></td>
+                                <td id="18im" class="x86 inv-block"></td>
+                                <td id="19im" class="x86 inv-block"></td>
+                            </tr>
+                        </table>
+                        </div>
+
+                        <div class="margin5">
+                            <span id="gold_mio" class="fontFancy">Monete: <input type="number" id="monete" name="quantity" min="0" max="9999999" style="display: inline;" oninput="trade.emit('changeGold', parseInt(document.getElementById('monete').value))"></span>
+                        </div>
+                    </div>
+
+                    <div id="inv_suo" class="inline-table">
+                        
+                        <div class="margin5">
+                        <span class="fontFancy">Stato: <span class="dot red" id="stato_suo"></span></span>
+                        <span id="gold_suo" class="fontFancy">Monete: 0</span>
+                        </div>
+                        
+                        <div>
+                        <table class="inline">
+                            <tr>
+                                <td id="0is" class="x86 inv-block"></td>
+                                <td id="1is" class="x86 inv-block"></td>
+                                <td id="2is" class="x86 inv-block"></td>
+                                <td id="3is" class="x86 inv-block"></td>
+                                <td id="4is" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="5is" class="x86 inv-block"></td>
+                                <td id="6is" class="x86 inv-block"></td>
+                                <td id="7is" class="x86 inv-block"></td>
+                                <td id="8is" class="x86 inv-block"></td>
+                                <td id="9is" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="10is" class="x86 inv-block"></td>
+                                <td id="11is" class="x86 inv-block"></td>
+                                <td id="12is" class="x86 inv-block"></td>
+                                <td id="13is" class="x86 inv-block"></td>
+                                <td id="14is" class="x86 inv-block"></td>
+                            </tr>
+                            <tr>
+                                <td id="15is" class="x86 inv-block"></td>
+                                <td id="16is" class="x86 inv-block"></td>
+                                <td id="17is" class="x86 inv-block"></td>
+                                <td id="18is" class="x86 inv-block"></td>
+                                <td id="19is" class="x86 inv-block"></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+
+                    </div>
+
+                    <div class="centerD">
+                        <img src="client/img/gui/Scambio.png" class="x64 st inline" onclick="trade.emit('confermaScambio');">
+                        <img src="client/img/gui/Annulla.png" class="x64 st inline" onclick="trade.emit('annullaScambio');">
+                    </div>
+
+                </div>
+
+                <div id="missioni" style="display:none;position:absolute;" class="inventory-tab">
+                    <div class="gold2">Missioni</div>
+                    <div id="allmiss" style="display:inline-block">
+
+                    </div>
+                    <div style="display:inline-block;position:absolute;margin-left:30px;margin-top:15px;">
+                        <span id="titoloMissione"></span>
+                        <br><br>
+                        <span id="spiegazioneMissione"></span>
+                        <br><br>
+                        <span id="obbiettivoMissione"></span>
+                        <br><br>
+                        <span id="ricompensaMissione"></span>
+                    </div>
+                </div>
+
+                <div id="group" style="display:none;position:absolute;" class="inventory-tab">
+                    <div class="gold2">Gruppo</div>
+                    <br>
+                    <div id="groupFunction">
+                        <div id="nuovo" onclick="group.emit('gruppo')" class="gold4">Nuovo gruppo</div>
+                        <div id="partecipa" onclick="group.emit('partecipa')" class="gold4">Partecipa</div>
+
+                        <!-- inserisci e rimuovi solo per l'host del gruppo -->
+                        <div id="inserisciG" onclick="group.emit('inserisci')" class="gold4">Inserisci Player</div>
+                        <div id="rimuovi" onclick="group.emit('rimuovi')" class="gold4">Rimuovi Player</div>
+
+                        <!-- abbandona per tutti -->
+                        <div id="abbandona" onclick="group.emit('abbandona')" class="gold4">Abbandona</div>
+
+                    </div>
+                    <div id="allusers" style="display:inline-block">
+
+                    </div>
+                    <div style="display:inline-block;position:absolute;margin-left:30px;margin-top:5px;">
+                        <span id="nomeUser"></span>
+                        <br><br>
+                        <span id="infoUser"></span>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div id="chat">
+                    <div id="chat-text">
+                        <!--<div>Ciao!</div>-->
+                    </div>
+                    <form id="chat-form">
+                        <input id="chat-input" type="text" style="width:380px" onfocusin="writing=true" onfocusout="writing=false"></input>
+                    </form>
+                </div>
+
+                <div id="statuto">
+                    <img src="client/img/gui/Inventario.png" id="inventario_img" class="x64 st" onclick="inventory.open();">
+                    <img src="client/img/gui/Migliora.png" id="migliora_img" class="x64 st" onclick="status_pg.open();">
+                    <img src="client/img/gui/Quest.png" id="quest_img" class="x64 st" onclick="missioni.open();">
+                    <img src="client/img/gui/Group.png" id="group_img" class="x64 st" onclick="group.open();">
+                    <img src="client/img/gui/Trade.png" id="trade_img" class="x64 st" onclick="trade.emit('doTrade');">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+
+https://ezgif.com/split/ezgif-2-f1d5101b04.gif
+https://opengameart.org/content/sorlo-ultimate-smash-friends
+-->
+
+
+<script src="client/js/socket.io.js"></script>
+<script src="client/js/sha256.min.js"></script>
+<script src="client/js/Inventory.js"></script>
+<script src="client/js/Ability.js"></script>
+<script src="client/js/myFunctions.js"></script>
+<script src="client/js/Mondo.js"></script>
+<script src="client/js/NPCNegozio.js"></script>
+<script src="client/js/Missioni.js"></script>
+<script src="client/js/Group.js"></script>
+<script src="client/js/Trade.js"></script>
+<script src="client/js/Stalliere.js"></script>
+
+<script>
+    var WIDTH = window.innerWidth;
+    var HEIGHT = window.innerHeight;
+    
+    var ctx = document.getElementById("ctx").getContext("2d");
+    ctx.canvas.width = WIDTH;
+    ctx.canvas.height = HEIGHT;
+
+
+    var miglioraOpen = true;
+
+
+    let resizeCanvas = () => {
+        WIDTH = window.innerWidth;
+        HEIGHT = window.innerHeight;
+        ctx.canvas.width = WIDTH;
+        ctx.canvas.height = HEIGHT;
+        
+        gameDiv.style.width = WIDTH;
+        gameDiv.style.height = HEIGHT;
+        game.style.width = WIDTH;
+        game.style.height = HEIGHT;
+        ui.style.width = WIDTH;
+        ui.style.height = HEIGHT;
+
+        inv.style.left = (WIDTH-770)/2;
+        inv.style.top = (HEIGHT-385)/2;
+        short_inv.style.top = (HEIGHT-442)/2;
+        short_abi.style.top = (HEIGHT-442)/2;
+
+        migliora.style.left = (WIDTH-626)/2;
+        migliora.style.top = (HEIGHT-127)/2; 
+
+        missions.style.left = (WIDTH-516)/2;
+        missions.style.top = (HEIGHT-451)/2;
+        
+        document.getElementById("group").style.left = (WIDTH-290)/2;
+        document.getElementById("group").style.top = (HEIGHT-500)/2;
+
+        document.getElementById("trade").style.left = (WIDTH-935)/2;
+        document.getElementById("trade").style.top = (HEIGHT-580)/2;
+        
+        document.getElementById("Teleporter").style.left = (WIDTH-185)/2;
+        document.getElementById("Teleporter").style.top = (HEIGHT-116)/2;
+
+        document.getElementById("Stalliere").style.left = (WIDTH-450)/2;
+        document.getElementById("Stalliere").style.top = (HEIGHT-450)/2;
+
+
+        chat.style.left = (WIDTH-380)/2-64;
+        chat.style.bottom = 0;
+    }
+
+    var socket = io();
+
+    //sing
+    var singDiv = document.getElementById("singDiv"),
+        singDivUsername = document.getElementById("singDiv-username"),
+        singDivSingIn = document.getElementById("singDiv-singIn"),
+        singDivSingUp = document.getElementById("singDiv-singUp"),
+        singDivPassword = document.getElementById("singDiv-password"),
+        gameDiv = document.getElementById("gameDiv"),
+        game = document.getElementById("game"),
+        ui = document.getElementById("ui"),
+        inv = document.getElementById("inventario");
+        gameDiv.style.width = WIDTH;
+        gameDiv.style.height = HEIGHT;
+        game.style.width = WIDTH;
+        game.style.height = HEIGHT;
+        ui.style.width = WIDTH;
+        ui.style.height = HEIGHT;
+
+    var reg_username = document.getElementById("registrati-username"),
+        reg_email = document.getElementById("registrati-email"),
+        reg_password = document.getElementById("registrati-password"),
+        reg_password2 = document.getElementById("registrati-password2"),
+        acc_email = document.getElementById("accedi-email"),
+        acc_password = document.getElementById("accedi-password");
+    
+    var accediForm = function(){
+        let pw = sha256(acc_password.value);
+        socket.emit("singIn", {email: acc_email.value, password: pw});
+    }
+    var registratiForm = function(){
+        if(reg_password.value == reg_password2.value){
+            let pw = sha256(reg_password.value);
+            socket.emit("singUp", {username: reg_username.value, password: pw, email: reg_email.value});
+        }
+        else myAlert("Password diverse!");
+    }
+
+    socket.on("singInResponse", function(data){
+        if(data.success){
+            singDiv.style.display = "none";
+            gameDiv.style.display = "inline-block";
+        }else myAlert(data.text);
+    });
+    socket.on("singUpResponse", function(data){
+        myAlert(data.text);
+        /*if(data.success) alert("Sing up avvenuto");
+        else alert("Sing up non avvenuto");
+        */
+    });
+
+    //chat game
+    var chatText = document.getElementById("chat-text"),
+        chatInput = document.getElementById("chat-input"),
+        chatForm = document.getElementById("chat-form"),
+        chat = document.getElementById("chat"),
+        writing = false;
+
+    socket.on("addToChat", function(data){
+        chatText.innerHTML += "<div>" + data + "</div>";
+        chatText.scrollTop = chatText.scrollHeight;
+    });
+    socket.on("evalAnsware", function(data){
+        console.log(data);
+    });
+
+    var startTime, isPing = false;
+    setInterval(function() {
+        if(isPing){
+            startTime = Date.now();
+            socket.emit('howping');
+        }
+    }, 2000);
+
+    socket.on('howpong', function() {
+        latency = Date.now() - startTime;
+        document.getElementById("Ping").innerText = latency+"ms";
+        //console.log(latency+"ms");
+    });
+
+    chatForm.onsubmit = function(e){
+        e.preventDefault();
+        if(chatInput.value != ""){
+            if(chatInput.value[0] === '/') socket.emit("evalServer", chatInput.value.slice(1));
+            else if(chatInput.value[0] === '@') socket.emit("sendPmToServer", {username:chatInput.value.slice(1,chatInput.value.indexOf(',')), message:chatInput.value.slice(chatInput.value.indexOf(',')+1)});
+            else socket.emit("sendMsgToServer", chatInput.value);
+        }
+        chatInput.value = "";
+    }
+
+    //Stats
+    var migliora = document.getElementById("migliora"),
+        hpMax = document.getElementById("hpMax"),
+        hpMax_migliora = document.getElementById("hpMax_migliora"),
+        mpMax = document.getElementById("mpMax"),
+        mpMax_migliora = document.getElementById("mpMax_migliora"),
+        defence = document.getElementById("defence"),
+        defence_migliora = document.getElementById("defence_migliora"),
+        damage = document.getElementById("damage"),
+        damage_migliora = document.getElementById("damage_migliora"),
+        regHp = document.getElementById("regHp"),
+        regHp_migliora = document.getElementById("regHp_migliora"),
+        regMp = document.getElementById("regMp"),
+        regMp_migliora = document.getElementById("regMp_migliora"),
+        puntiStat = document.getElementById("puntiStat"),
+        abilita_migliora = document.getElementById("abilita_migliora"),
+        puntiAbi = document.getElementById("puntiAbi"),
+        ab = document.getElementById("ab"),
+        status_ = document.getElementById("status_"),
+        abilita_ = document.getElementById("abilita_"),
+        short_inv = document.getElementById("short-inv"),
+        short_abi = document.getElementById("short-abi"),
+        invNPC = document.getElementById("inventarioNPC"),
+        teleporter = document.getElementById("Teleporter"),
+        magazzino = document.getElementById("Magazzino"),
+        prendi_mag = document.getElementById("prendi_mag"),
+        mag_back = document.getElementById("mag_back"),
+        missions = document.getElementById("missioni"),
+        group = document.getElementById("group");
+
+    status_.onclick = function(){
+        punti_migliora.style.display="block";
+
+        migliora.style.left = (WIDTH-626)/2;
+        migliora.style.top = (HEIGHT-127)/2; 
+
+        abilita_migliora.style.display="none";
+    }
+    abilita_.onclick = function(){
+        abilita_migliora.style.display="block";
+
+        migliora.style.left = (WIDTH-323)/2;
+        migliora.style.top = (HEIGHT-600)/2; 
+
+        punti_migliora.style.display="none";
+    }
+
+    atrTooltip(hpMax_migliora, "aumenta di 1 HP");
+    atrTooltip(mpMax_migliora, "aumenta di 1 MP");
+    atrTooltip(defence_migliora, "aumenta di 0.05 DEF");
+    atrTooltip(damage_migliora, "aumenta di 0.05 ATK");
+    atrTooltip(regHp_migliora, "aumenta di 0.05 rigeneragione hp");
+    atrTooltip(regMp_migliora, "aumenta di 0.05 rigeneragione mp");
+
+    atrTooltip(document.getElementById("inventario_img"), "inventario");
+    atrTooltip(document.getElementById("migliora_img"), "migliora status e abilita");
+    atrTooltip(document.getElementById("quest_img"), "missioni");
+    atrTooltip(document.getElementById("group_img"), "gruppo");
+    atrTooltip(document.getElementById("trade_img"), "scambia");
+
+    var status_pg = {};
+    status_pg.open = function(){
+        if(migliora.style.display == "none"){
+            inv.style.display = "none";
+            document.getElementById("missioni").style.display = "none";
+    		document.getElementById("group").style.display = "none";
+
+            migliora.style.display = "block";
+        }
+        else migliora.style.display = "none";
+    }
+    status_pg.migliora = function(n){
+        var f = n.id.replace("_migliora", "");
+        //console.log(f);
+        socket.emit("miglioraStat",f);
+    }
+
+
+    //statistics
+    var hp_barra = document.getElementById("VitaBarra"),
+        hp_text = document.getElementById("VitaText"),
+        mp_barra = document.getElementById("MagiaBarra"),
+        mp_text = document.getElementById("MagiaText"),
+        exp_barra = document.getElementById("EsperienzaBarra"),
+        exp_text = document.getElementById("EsperienzaText"),
+        monete = document.getElementById("Monete"),
+        gemme = document.getElementById("Gemme"),
+        livello = document.getElementById("Livello");
+    
+    var update_GUI = function(){
+   
+        let data = Player.list[selfId];
+        //data = {hp:int, hpMax:int, mp:int, mpMax:int, exp: int}
+        const barraWidth = 200;
+
+        if(data.lastHP != data.hp){
+            hp_barra.style.width = (data.hp*barraWidth)/data.hpMax;
+            hp_text.innerHTML = "HP "+Math.round(data.hp * 10)/10+"/"+data.hpMax;
+            data.lastHP = data.hp;
+        }
+        if(data.lastMP != data.mp){
+            mp_barra.style.width = (data.mp*barraWidth)/data.mpMax;  
+            mp_text.innerHTML = "MP "+Math.round(data.mp * 10)/10+"/"+data.mpMax;
+            data.lastMP = data.mp;
+        }
+        if(data.lastEXP != data.exp){
+            exp_barra.style.width = (data.exp*barraWidth)/100;
+            exp_text.innerHTML = "EXP "+Math.round(data.exp * 10)/10+"/100";
+            data.lastEXP = data.exp;
+        }
+        
+        if(data.lastGOLD != data.gold){
+            monete.innerHTML = data.gold;
+            data.lastGOLD = data.gold;
+        }
+        if(data.lastGEMME != data.gemme){
+            gemme.innerHTML = data.gemme;
+            data.lastGEMME = data.gemme;
+        }
+        if(data.lastLIVELLO != data.livello){
+            livello.innerHTML = "livello: "+data.livello;
+            data.lastLIVELLO = data.livello;
+        }
+
+        inventarioNPC.style.left = (WIDTH-476)/2;
+        inventarioNPC.style.top = (HEIGHT-385)/2;
+
+        if(document.getElementById("prendi_mag").style.display == "none"){
+            document.getElementById("Magazzino").style.left = (WIDTH-330)/2;
+            document.getElementById("Magazzino").style.top = (HEIGHT-148)/2;
+        }else{
+            document.getElementById("Magazzino").style.left = (WIDTH-458)/2;
+            document.getElementById("Magazzino").style.top = (HEIGHT-402)/2;
+        }
+
+
+        if(data.lastHPMAX != data.hpMax){
+            hpMax.innerHTML = "hp: "+data.hpMax;
+            data.lastHPMAX = data.hpMax;
+        }
+        if(data.lastMPMAX != data.mpMax){
+            mpMax.innerHTML = "mp: "+data.mpMax;
+            data.lastMPMAX = data.mpMax;
+        }
+        if(data.lastDEFENCE != data.defence){
+            defence.innerHTML = "def: "+data.defence;
+            data.lastDEFENCE = data.defence;
+        }
+        if(data.lastDAMAGE != data.damage){
+            damage.innerHTML = "atk: "+data.damage;
+            data.lastDAMAGE = data.damage;
+        }
+        if(data.lastREGHP != data.regHp){
+            regHp.innerHTML = "reg hp: "+data.regHp;
+            data.lastREGHP = data.regHp;
+        }
+        if(data.lastREGMP != data.regMp){
+            regMp.innerHTML = "reg mp: "+data.regMp;
+            data.lastREGMP = data.regMp;
+        }
+        if(data.lastPUNTISTAT != data.puntiStat){
+            puntiStat.innerHTML = "punti disponibili: "+data.puntiStat;
+            data.lastPUNTISTAT = data.puntiStat;
+        }
+        
+
+        if(data.puntiStat > 0 && (hpMax_migliora.style.display == "" || hpMax_migliora.style.display == "none")){
+            document.getElementById("migliora_img").src = "client/img/gui/Migliora_Active.gif";
+            hpMax_migliora.style.display = "block";
+            mpMax_migliora.style.display = "block";
+            defence_migliora.style.display = "block";
+            damage_migliora.style.display = "block";
+            regHp_migliora.style.display = "block";
+            regMp_migliora.style.display = "block";
+        }
+        if(data.puntiStat <= 0 && hpMax_migliora.style.display == "block"){
+            document.getElementById("migliora_img").src = "client/img/gui/Migliora.png";
+            hpMax_migliora.style.display = "none";
+            mpMax_migliora.style.display = "none";
+            defence_migliora.style.display = "none";
+            damage_migliora.style.display = "none";
+            regHp_migliora.style.display = "none";
+            regMp_migliora.style.display = "none";
+        }
+    }
+
+
+
+
+    //UI
+
+    var trade = new Trade({socket:socket,server:false, name:undefined});
+    socket.on("updateTrade", function(opt){
+        //console.log(opt);
+        trade.name = opt.name;
+        trade.isOpen = opt.isOpen;
+        trade.state = opt.state;
+        trade.buttons = opt.buttons;
+        trade.player = opt.player;
+        trade.items = opt.items;
+
+        trade.refreshRender();
+    });
+    socket.on("openTrade", function(){trade.openTrade();})
+
+
+    var inventory = new Inventory([],socket,false,[],{},[]);
+    socket.on("updateInventory", function(opt){
+        //console.log(opt);
+        inventory.items = opt.items;
+        inventory.equip = opt.equip;
+        inventory.short_inv = opt.short_inv;
+        inventory.magazzino = opt.magazzino;
+        inventory.refreshRender();
+    });
+    var ability = new Ability({socket:socket,server:false,skill:[]});
+    socket.on("updateAbility", function(opt){
+        ability.skill = opt.skill;
+        ability.ricarica = opt.ricarica;
+        ability.refreshRender();
+    });
+    var mondo = new Mondo({socket:socket,server:false,mondo:{}});
+    socket.on("updateMondo", function(opt){
+
+        mondo.mondo = JSON.parse(opt.mondo);
+        mondo.refreshRender();
+    });
+    var NPCNeg = new NPCNegozio({socket:socket,server:false,nome:null, lastNeg:null, closeAll:true, negozi:[]});
+    socket.on("updateNeg", function(opt){
+        NPCNeg.negozi[opt.nome] = opt.neg;
+    });
+    socket.on("updateNPC", function(opt){
+        NPCNeg.nome = opt.nome;
+        NPCNeg.lastNeg = opt.lastNeg;
+        NPCNeg.closeAll = opt.closeAll;
+        NPCNeg.refreshRender();
+    });
+    var missioni = new Missioni({socket:socket,server:false,missioni:[],missioniCompletate:[],mostri:[]});
+    socket.on("updateMissioni", function(opt){
+        console.log(opt);
+        missioni.missioni = opt.missioni;
+        missioni.missioniCompletate = opt.missioniCompletate;
+        missioni.refreshRender();
+    });
+    socket.on("updateMostriMissioni", function(opt){console.log(opt);missioni.mostri = opt;missioni.refreshRender();});
+    var group = new Group({socket:socket,server:false, name:undefined});
+    socket.on("updateGroup", function(opt){
+        //console.log(opt);
+        group.host = opt.host;
+        group.users = opt.users;
+        group.name = opt.name;
+        group.groupName = opt.groupName;
+        group.clicked = opt.clicked;
+        group.refreshRender();
+    });
+    
+    
+    var stalliere = new Stalliere({socket:socket,server:false, pet:undefined});
+    socket.on("updateStalliere", function(opt){
+        //console.log(opt);
+        stalliere.pet = opt.pet;
+        stalliere.skill = JSON.parse(opt.skill);
+        stalliere.commento = opt.commento;
+        stalliere.commentoSkill = opt.commentoSkill;
+        stalliere.refreshRender();
+    });
+    //game
+
+
+    socket.on("alert", function(data){
+        myAlert(data);
+    });
+
+    socket.on("console_log", function(data){
+        console.log(data);
+    });
+
+    socket.on("confirm", function(data){
+        data.titolo = data.titolo || "Attenzione!";
+
+        writing = true;
+
+        let cb = data.cb || function(){};
+        data.cb = function(){
+            cb();
+            if(data.emit.bool) socket.emit(data.emit.nome, data.data);
+
+            writing = false;
+        }
+        
+        myConfirm(data.msg, data.titilo, function(){
+            data.cb();
+        });
+    });
+
+    socket.on("prompt", function(data){
+        data.titolo = data.titolo || "Attenzione!";
+
+        writing = true;
+
+        let cb = data.cb || function(){};
+        data.cb = function(text){
+            cb();
+            if(data.emit.bool){
+                if(data.data) socket.emit(data.emit.nome, {text:text, data:data.data});
+                else socket.emit(data.emit.nome, text);
+            }
+
+            writing = false;
+        }
+
+        myPrompt(data.msg, data.titilo, function(t){data.cb(t)});
+    });
+
+    socket.on("document", function(data){
+        let d = document.getElementById(data.id);
+
+        if(data.write) d.innerHTML = data.msg;
+        if(data.style) d.style = data.style_option;
+    });
+
+    var openNPC = false;
+    var Player = function(initPack){
+        var self = {};
+
+        self.id = initPack.id;
+        self.username = initPack.username;
+        self.number = initPack.number;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.hp = initPack.hp;
+        self.hpMax = initPack.hpMax;
+        self.mp = initPack.mp;
+        self.mpMax = initPack.mpMax;
+
+        self.lastHP = -1;
+        self.lastMP = -1;
+        self.lastEXP = -1;
+        self.lastGEMME = -1;
+        self.lastGOLD = -1;
+        self.lastLIVELLO = -1;
+
+        self.defence = initPack.defence;
+        self.damage = initPack.damage;
+        self.regHp = initPack.regHp;
+        self.regMp = initPack.regMp;
+        self.puntiStat = initPack.puntiStat;
+        self.colorText = initPack.colorText;
+
+        self.gold = initPack.gold;
+        self.gemme = initPack.gemme;
+        self.livello = initPack.livello;
+        self.exp = initPack.esperienza;
+        self.score = initPack.score;
+        self.map = initPack.map;
+        self.map_options = initPack.map_options;
+
+        self.mouseAngle = initPack.mouseAngle;
+
+        
+        self.spdX = 0;
+        self.spdY = 0;
+
+        self.img = new Image();
+        self.img.src = initPack.animation.img;
+
+        self.animation = initPack.animation;
+        self.spriteCounterAnimation = 0;
+        self.lastNeg = false;
+
+        self.draw = function(){
+
+
+            if(self.img.src != self.animation.img)
+                self.img.src = self.animation.img;
+            
+
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            ctx.fillStyle = self.colorText;
+            ctx.font = "23px 'Rancho', cursive";
+            ctx.fillText(self.username, x-ctx.measureText(self.username).width/2, y-33);
+
+/*
+            var hpWidth = 30*self.hp / self.hpMax;
+            ctx.fillStyle = 'red';
+            ctx.fillRect(x-hpWidth/2, y-30, hpWidth, 4);
+*/
+            var aimAngle = self.mouseAngle;
+            if(aimAngle<0) aimAngle += 360;
+
+            var corrent = self.animation;
+
+            var directionMode = corrent.right; //right
+            if(aimAngle >= 45 && aimAngle < 135){//down
+                directionMode = corrent.down;
+            }
+            else{
+                if(aimAngle >= 135 && aimAngle < 225){//left
+                    directionMode = corrent.left;
+                }
+                else{
+                    if(aimAngle >= 225 && aimAngle < 315){//up
+                        directionMode = corrent.up;
+                    }
+                }
+            }
+
+            self.spriteCounterAnimation += corrent.animationSpeed;
+
+            var walkingMod = Math.floor(self.spriteCounterAnimation) % corrent.numFrameWidth || 0;
+
+            if(self.spdX == 0 && self.spdY == 0)
+                if(corrent.idle != "continue") 
+                    walkingMod = corrent.idle;
+
+
+            var width = self.img.width,
+                height = self.img.height;
+                
+            self.frameWidth = width/corrent.numFrameWidth;
+            self.frameHeight = height/corrent.numFrameHeight;
+
+            var img_width = self.frameWidth*corrent.ratio,
+                img_height = self.frameHeight*corrent.ratio;
+
+
+            console.log(self);
+            ctx.drawImage(self.img,
+                walkingMod*self.frameWidth,directionMode*self.frameHeight,self.frameWidth,self.frameHeight,
+                x-img_width/2,y-img_height/2,img_width,img_height);
+
+        }
+
+
+        Player.list[self.id] = self;
+        return self;
+    }
+    Player.list = {};
+
+    var Bullet = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        
+        self.frWidth = initPack.frWidth;
+        self.frHeight = initPack.frHeight;
+        self.ratio = initPack.ratio;
+        self.animationSpeed = initPack.animationSpeed;
+
+        self.spriteCounterAnimation = 0;
+
+        self.img = new Image();
+        self.img.src = initPack.imgSrc;
+
+        self.trackHeight = 0;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            var width = self.img.width,
+                height = self.img.height;
+
+
+
+            self.spriteCounterAnimation += self.animationSpeed;
+            
+            if(Math.floor(self.spriteCounterAnimation) > self.frWidth-1){
+                self.spriteCounterAnimation -= self.frWidth;
+                self.trackHeight++;
+
+                if(self.trackHeight > self.frHeight-1){
+                    self.trackHeight = 0;
+                }
+            }
+
+
+                self.walkingMod = Math.floor(self.spriteCounterAnimation);
+
+                self.frameWidth = width/self.frWidth;
+                self.frameHeight = height/self.frHeight;
+
+                var img_width = self.frameWidth*self.ratio,
+                    img_height = self.frameHeight*self.ratio;
+
+                ctx.drawImage(self.img,
+                self.walkingMod*self.frameWidth,self.trackHeight*self.frameHeight,self.frameWidth,self.frameHeight,
+                    x-img_width/2,y-img_height/2,img_width,img_height);
+            
+
+        
+
+                /*
+            self.spriteCounterAnimation += self.animationSpeed;
+            var walkingMod = Math.floor(self.spriteCounterAnimation) % (self.frWidth*self.frHeight) || 0;
+
+            self.frameWidth = width/self.frWidth;
+            self.frameHeight = height/self.frHeight;
+
+            var img_width = self.frameWidth*self.ratio,
+                img_height = self.frameHeight*self.ratio;
+
+            ctx.drawImage(self.img,
+                walkingMod*self.frameWidth,0*self.frameHeight,self.frameWidth,self.frameHeight,
+                x-img_width/2,y-img_height/2,img_width,img_height);*/
+        
+        }
+
+        Bullet.list[self.id] = self;
+        return self;
+    }
+    Bullet.list = {};
+
+
+    var NPC = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.nome = initPack.nome;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        self.negozio = initPack.negozio;
+
+        self.img = new Image();
+        self.img.src = initPack.img;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            let width;
+            self.img.width > 100 ? width = 100 : width = self.img.width;
+            let height = (width * self.img.height) / self.img.width;
+            
+            //let width = self.img.width, height=self.img.height;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            ctx.drawImage(self.img,
+                0,0,self.img.width,self.img.height,
+                x-width/2,y-height/2,width,height);
+        }
+        
+        NPC.list[self.id] = self;
+        return self;
+    }
+    NPC.list = {};
+
+    var prendiMagazzino = function(){
+        //prendi e posa, poi teleport. Il fabbro (per fare incantesimi) prossimamente
+        //fai le skillllllll
+        let magback = document.getElementById("mag_back"),
+            prendimag = document.getElementById("prendi_mag"),
+            close = document.getElementById("close_mag");
+
+        magback.style.display = "none";
+        prendimag.style.display = "block";
+        close.style.display = "block";
+
+        inventory.clickItems.bool = false;
+        inventory.clickItems.option = "Inventario";
+    }
+    var inserisciMagazzino = function(){
+        
+        let magback = document.getElementById("mag_back"),
+            prendimag = document.getElementById("prendi_mag"),
+            close = document.getElementById("close_mag");
+
+        magback.style.display = "none";
+        prendimag.style.display = "none";
+        close.style.display = "none";
+        
+        inventory.clickItems.bool = false;
+        inventory.clickItems.option = "Magazzino";
+        inventory.open();
+    }
+    var chiudiMagazzino = function(){
+        
+        let magback = document.getElementById("mag_back"),
+            prendimag = document.getElementById("prendi_mag"),
+            close = document.getElementById("close_mag");
+
+        magback.style.display = "block";
+        prendimag.style.display = "none";
+
+        document.getElementById("Magazzino").style.display = "none";
+        
+        inventory.clickItems.bool = false;
+        inventory.clickItems.option = "Inventario";
+    }
+
+    var Drop = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+
+        self.img = new Image();
+        self.img.src = initPack.imgSrc;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            let width = 43;
+            let height = (width * self.img.height) / self.img.width;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            ctx.drawImage(self.img,
+                0,0,self.img.width,self.img.height,
+                x-width/2,y-height/2,width,height);
+        }
+
+        Drop.list[self.id] = self;
+        return self;
+    }
+    Drop.list = {};
+
+
+    var Abilita = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+
+        self.img = new Image();
+        self.img.src = initPack.img;
+
+        self.animationSpeed = initPack.animationSpeed;
+        self.frWidth = initPack.frWidth;
+        self.frHeight = initPack.frHeight;
+        self.ratio = initPack.ratio;
+        self.loop = initPack.loop;
+
+        self.spriteCounterAnimation = 0;
+        self.lastWalkingMod = 0;
+        self.trackHeight = 0;
+        self.walkingMod = 0;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            var width = self.img.width,
+                height = self.img.height;
+                
+            self.spriteCounterAnimation += self.animationSpeed;
+            
+            if(Math.floor(self.spriteCounterAnimation) > self.frWidth-1){
+                self.spriteCounterAnimation -= self.frWidth;
+                self.trackHeight++;
+
+                if(self.trackHeight > self.frHeight-1){
+                    self.loop--;
+                    self.trackHeight = 0;
+                }
+            }
+
+            if(self.loop <= 0 && self.loop > -1) socket.emit("removeAbility", self.id);
+            else{
+                self.walkingMod = Math.floor(self.spriteCounterAnimation);
+
+                self.frameWidth = width/self.frWidth;
+                self.frameHeight = height/self.frHeight;
+
+                var img_width = self.frameWidth*self.ratio,
+                    img_height = self.frameHeight*self.ratio;
+
+                ctx.drawImage(self.img,
+                self.walkingMod*self.frameWidth,self.trackHeight*self.frameHeight,self.frameWidth,self.frameHeight,
+                    x-img_width/2,y-img_height/2,img_width,img_height);
+            }
+        }
+
+        Abilita.list[self.id] = self;
+        return self;
+    }
+    Abilita.list = {};
+
+    //new Abilita({x:500,y:500, map:"Island",animationSpeed:0.6,loop:-1,ratio:1,frWidth:5,frHeight:3,img:"client/img/pet/Skill/Acido.png"});
+
+
+    var Dungeon = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+
+        self.img = new Image();
+        self.img.src = initPack.img;
+
+        self.draw = function(){
+            if(Player.list[selfId].map !== self.map) return;
+
+            let width = 64;
+            let height = (width * self.img.height) / self.img.width;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            ctx.drawImage(self.img,
+                0,0,self.img.width,self.img.height,
+                x-width/2,y-height/2,width,height);
+        }
+
+        Dungeon.list[self.id] = self;
+        return self;
+    }
+    Dungeon.list = {};
+
+
+    var CanvasText = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        self.msg = initPack.msg;
+        self.color = initPack.color;
+
+        self.draw = function(){
+
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            ctx.fillStyle = self.color;
+            ctx.font = "22px 'Hanalei Fill', cursive, 'Titillium Web', sans-serif";
+            ctx.fillText(self.msg, x-ctx.measureText(self.msg).width/2, y);
+        }
+
+        CanvasText.list[self.id] = self;
+        return self;
+    }
+    CanvasText.list = {};
+
+    var Enemy = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        self.hp = initPack.hp;
+        self.hpMax = initPack.hpMax;
+        self.angle = initPack.angle;
+
+        self.spdX = 0;
+        self.spdY = 0;
+
+        self.animation = initPack.animation;
+        self.img = new Image();
+        self.img.src = initPack.animation.img;
+
+        self.spriteCounterAnimation = 0;
+        self.draw = function(){
+
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            var hpWidth = 30*self.hp / self.hpMax;
+            ctx.fillStyle = 'red';
+            ctx.fillRect(x-hpWidth, y+10,hpWidth,4);
+
+            var aimAngle = self.angle;
+            if(aimAngle<0) aimAngle += 360;
+
+
+            var corrent = self.animation;
+            var directionMode = corrent.right; //right
+            if(aimAngle >= 45 && aimAngle < 135){//down
+                directionMode = corrent.down;
+            }
+            else{
+                if(aimAngle >= 135 && aimAngle < 225){//left
+                    directionMode = corrent.left;
+                }
+                else{
+                    if(aimAngle >= 225 && aimAngle < 315){//up
+                        directionMode = corrent.up;
+                    }
+                }
+            }
+
+            self.spriteCounterAnimation += corrent.animationSpeed;
+            
+            var walkingMod = Math.floor(self.spriteCounterAnimation) % corrent.numFrameWidth || 0;
+            
+            if(self.spdX == 0 && self.spdY == 0)
+                if(corrent.idle != "continue") 
+                    walkingMod = corrent.idle;
+
+
+            var width = self.img.width,
+                height = self.img.height;
+                
+            self.frameWidth = width/corrent.numFrameWidth;
+            self.frameHeight = height/corrent.numFrameHeight;
+
+            var img_width = self.frameWidth*corrent.ratio,
+                img_height = self.frameHeight*corrent.ratio;
+
+
+            ctx.drawImage(self.img,
+                walkingMod*self.frameWidth,directionMode*self.frameHeight,self.frameWidth,self.frameHeight,
+                x-img_width/2,y-img_height/2,img_width,img_height);
+            
+        }
+
+        Enemy.list[self.id] = self;
+        return self;
+    }
+    Enemy.list = {};
+
+
+
+
+    var Pet = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        self.hp = initPack.hp;
+        self.hpMax = initPack.hpMax;
+        self.angle = initPack.angle;
+
+        self.spdX = 0;
+        self.spdY = 0;
+
+        self.animation = initPack.animation;
+        self.img = new Image();
+        self.img.src = initPack.animation.img;
+
+        //console.log(self);
+
+        self.spriteCounterAnimation = 0;
+        self.draw = function(){
+
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            var hpWidth = 30*self.hp / self.hpMax;
+            ctx.fillStyle = 'red';
+            ctx.fillRect(x-hpWidth, y+10,hpWidth,4);
+
+            var aimAngle = self.angle;
+            if(aimAngle<0) aimAngle += 360;
+
+
+            var corrent = self.animation;
+            var directionMode = corrent.right; //right
+            if(aimAngle >= 45 && aimAngle < 135){//down
+                directionMode = corrent.down;
+            }
+            else{
+                if(aimAngle >= 135 && aimAngle < 225){//left
+                    directionMode = corrent.left;
+                }
+                else{
+                    if(aimAngle >= 225 && aimAngle < 315){//up
+                        directionMode = corrent.up;
+                    }
+                }
+            }
+
+            self.spriteCounterAnimation += corrent.animationSpeed;
+            
+            var walkingMod = Math.floor(self.spriteCounterAnimation) % corrent.numFrameWidth || 0;
+            
+            if(self.spdX == 0 && self.spdY == 0)
+                if(corrent.idle != "continue") 
+                    walkingMod = corrent.idle;
+
+
+            var width = self.img.width,
+                height = self.img.height;
+                
+            self.frameWidth = width/corrent.numFrameWidth;
+            self.frameHeight = height/corrent.numFrameHeight;
+
+            var img_width = self.frameWidth*corrent.ratio,
+                img_height = self.frameHeight*corrent.ratio;
+
+
+            ctx.drawImage(self.img,
+                walkingMod*self.frameWidth,directionMode*self.frameHeight,self.frameWidth,self.frameHeight,
+                x-img_width/2,y-img_height/2,img_width,img_height);
+            
+        }
+
+        Pet.list[self.id] = self;
+        return self;
+    }
+    Pet.list = {};
+
+
+
+
+
+
+    var Minion = function(initPack){
+        var self = {};
+        self.id = initPack.id;
+
+        self.x = initPack.x;
+        self.y = initPack.y;
+        self.map = initPack.map;
+        self.hp = initPack.hp;
+        self.hpMax = initPack.hpMax;
+        self.angle = initPack.angle;
+
+        self.timer = 0;
+        self.timeLife = initPack.timeLife;
+
+        self.spdX = 0;
+        self.spdY = 0;
+
+        self.animation = initPack.animation;
+        self.img = new Image();
+        self.img.src = initPack.animation.img;
+
+        self.spriteCounterAnimation = 0;
+        self.draw = function(){
+
+            if(Player.list[selfId].map !== self.map) return;
+
+            var x = self.x - Player.list[selfId].x + WIDTH/2,
+                y = self.y - Player.list[selfId].y + HEIGHT/2;
+
+            var hpWidth = 30*self.hp / self.hpMax;
+            ctx.fillStyle = 'red';
+            ctx.fillRect(x-hpWidth, y+33,hpWidth,4);
+
+            var hpWidth2 = 30 - 30*self.timer / self.timeLife;
+            ctx.fillStyle = '#00b8ff';
+            ctx.fillRect(x-hpWidth2, y+38,hpWidth2,4);
+
+            var aimAngle = self.angle;
+            if(aimAngle<0) aimAngle += 360;
+
+
+            var corrent = self.animation;
+            var directionMode = corrent.right; //right
+            if(aimAngle >= 45 && aimAngle < 135){//down
+                directionMode = corrent.down;
+            }
+            else{
+                if(aimAngle >= 135 && aimAngle < 225){//left
+                    directionMode = corrent.left;
+                }
+                else{
+                    if(aimAngle >= 225 && aimAngle < 315){//up
+                        directionMode = corrent.up;
+                    }
+                }
+            }
+
+            self.spriteCounterAnimation += corrent.animationSpeed;
+            
+            var walkingMod = Math.floor(self.spriteCounterAnimation) % corrent.numFrameWidth || 0;
+            
+            if(self.spdX == 0 && self.spdY == 0)
+                if(corrent.idle != "continue") 
+                    walkingMod = corrent.idle;
+
+
+            var width = self.img.width,
+                height = self.img.height;
+                
+            self.frameWidth = width/corrent.numFrameWidth;
+            self.frameHeight = height/corrent.numFrameHeight;
+
+            var img_width = self.frameWidth*corrent.ratio,
+                img_height = self.frameHeight*corrent.ratio;
+
+
+            ctx.drawImage(self.img,
+                walkingMod*self.frameWidth,directionMode*self.frameHeight,self.frameWidth,self.frameHeight,
+                x-img_width/2,y-img_height/2,img_width,img_height);
+            
+        }
+
+        Minion.list[self.id] = self;
+        return self;
+    }
+    Minion.list = {};
+
+
+
+
+
+
+
+    var selfId = null;
+
+    socket.on('init',function(data){
+        if(data.selfId) selfId = data.selfId;
+
+        //{ player:[{id, number, x, y},{}], bullet:[] }
+        for(var i = 0; i < data.player.length; i++){
+            new Player(data.player[i]);
+        }
+
+        for(var i = 0; i < data.bullet.length; i++){
+            new Bullet(data.bullet[i]);
+        }
+        
+        for(var i = 0; i < data.enemy.length; i++){
+            new Enemy(data.enemy[i]);
+        }
+
+        for(var i = 0; i < data.pet.length; i++){
+            new Pet(data.pet[i]);
+        }
+
+        for(var i = 0; i < data.minion.length; i++){
+            new Minion(data.minion[i]);
+        }
+
+        for(var i = 0; i < data.drop.length; i++){
+            new Drop(data.drop[i]);
+        }
+
+        for(var i = 0; i < data.abilita.length; i++){
+            new Abilita(data.abilita[i]);
+        }
+
+        for(var i = 0; i < data.dungeon.length; i++){
+            new Dungeon(data.dungeon[i]);
+        }
+
+        for(var i = 0; i < data.npc.length; i++){
+            new NPC(data.npc[i]);
+        }
+
+        for(var i = 0; i < data.canvasText.length; i++){
+            new CanvasText(data.canvasText[i]);
+        }
+    });
+
+    socket.on('update',function(data){
+        //{ player:[{id, number, x, y},{}], bullet:[] }
+        
+        for(var i = 0; i < data.player.length; i++){
+            var pack = data.player[i];
+            if(pack){
+                var p = Player.list[pack.id];
+                if(p){
+                    if(pack.x !== undefined) p.x = pack.x;
+                    if(pack.y !== undefined) p.y = pack.y;
+                    if(pack.hp !== undefined) p.hp = pack.hp;
+                    if(pack.hpMax !== undefined) p.hpMax = pack.hpMax;
+                    if(pack.mp !== undefined) p.mp = pack.mp;
+                    if(pack.mpMax !== undefined) p.mpMax = pack.mpMax;
+                    if(pack.defence !== undefined) p.defence = pack.defence;
+                    if(pack.damage !== undefined) p.damage = pack.damage;
+                    if(pack.regHp !== undefined) p.regHp = pack.regHp;
+                    if(pack.regMp !== undefined) p.regMp = pack.regMp;
+                    if(pack.puntiStat !== undefined) p.puntiStat = pack.puntiStat;
+                    if(pack.colorText !== undefined) p.colorText = pack.colorText;
+                    if(pack.gold !== undefined) p.gold = pack.gold;
+                    if(pack.gemme !== undefined) p.gemme = pack.gemme;
+                    if(pack.exp !== undefined) p.exp = pack.exp;
+                    if(pack.livello !== undefined) p.livello = pack.livello;
+                    if(pack.score !== undefined) p.score = pack.score;
+                    if(pack.map !== undefined) p.map = pack.map;
+                    if(pack.mouseAngle !== undefined) p.mouseAngle = pack.mouseAngle;
+                    if(pack.spdX !== undefined) p.spdX = pack.spdX;
+                    if(pack.spdY !== undefined) p.spdY = pack.spdY;
+
+                    if(pack.animation !== undefined) p.animation = pack.animation;
+
+                }
+            }
+        }
+        for(var i = 0; i < data.bullet.length; i++){
+            var pack = data.bullet[i];
+            if(pack){
+            var b = Bullet.list[pack.id];
+            if(b){
+                if(pack.x !== undefined) b.x = pack.x;
+                if(pack.y !== undefined) b.y = pack.y;
+            }
+        }
+        }
+        for(var i = 0; i < data.enemy.length; i++){
+            var pack = data.enemy[i];
+            if(pack){
+            var e = Enemy.list[pack.id];
+            if(e){
+                if(pack.x !== undefined) e.x = pack.x;
+                if(pack.y !== undefined) e.y = pack.y;
+                if(pack.hp !== undefined) e.hp = pack.hp;
+                if(pack.angle !== undefined) e.angle = pack.angle;
+                if(pack.spdX !== undefined) e.spdX = pack.spdX;
+                if(pack.spdY !== undefined) e.spdY = pack.spdY;
+            }
+        }
+        }
+        for(var i = 0; i < data.pet.length; i++){
+            var pack = data.pet[i];
+            if(pack){
+            var e = Pet.list[pack.id];
+            if(e){
+                if(pack.x !== undefined) e.x = pack.x;
+                if(pack.y !== undefined) e.y = pack.y;
+                if(pack.regHp !== undefined) e.regHp = pack.regHp;
+                if(pack.regMp !== undefined) e.regMp = pack.regMp;
+                if(pack.angle !== undefined) e.angle = pack.angle;
+                if(pack.map !== undefined) e.map = pack.map;
+                if(pack.damage !== undefined) e.damage = pack.damage;
+                if(pack.atkSpd !== undefined) e.atkSpd = pack.atkSpd;
+                if(pack.spdX !== undefined) e.spdX = pack.spdX;
+                if(pack.spdY !== undefined) e.spdY = pack.spdY;
+            }
+        }
+        }
+        for(var i = 0; i < data.minion.length; i++){
+            var pack = data.minion[i];
+            if(pack){
+            var e = Minion.list[pack.id];
+            if(e){
+                if(pack.x !== undefined) e.x = pack.x;
+                if(pack.y !== undefined) e.y = pack.y;
+                if(pack.hp !== undefined) e.hp = pack.hp;
+                if(pack.angle !== undefined) e.angle = pack.angle;
+                if(pack.map !== undefined) e.map = pack.map;
+                if(pack.timer !== undefined) e.timer = pack.timer;
+                if(pack.spdX !== undefined) e.spdX = pack.spdX;
+                if(pack.spdY !== undefined) e.spdY = pack.spdY;
+            }}
+        }
+        for(var i = 0; i < data.canvasText.length; i++){
+            var pack = data.canvasText[i];
+            if(pack){
+            var ct = CanvasText.list[pack.id];
+            if(ct){
+                if(pack.x !== undefined) ct.x = pack.x;
+                if(pack.y !== undefined) ct.y = pack.y;
+            }}
+        }
+
+        for(var i = 0; i < data.abilita.length; i++){
+            var pack = data.abilita[i];
+            if(pack){
+            var a = Abilita.list[pack.id];
+            if(a){
+                if(pack.x !== undefined) a.x = pack.x;
+                if(pack.y !== undefined) a.y = pack.y;
+            }}
+        }
+    });
+
+    socket.on('remove',function(data){
+        //data.enemy = data.enemy || [];
+        for(var i = 0; i < data.player.length; i++)
+            delete Player.list[data.player[i]];
+
+        for(var i = 0; i < data.bullet.length; i++)
+            delete Bullet.list[data.bullet[i]];
+        
+        for(var i = 0; i < data.enemy.length; i++)
+            delete Enemy.list[data.enemy[i]];
+    
+        for(var i = 0; i < data.pet.length; i++)
+            delete Pet.list[data.pet[i]];
+    
+        for(var i = 0; i < data.minion.length; i++)
+            delete Minion.list[data.minion[i]];
+        
+        for(var i = 0; i < data.drop.length; i++)
+            delete Drop.list[data.drop[i]];
+
+        for(var i = 0; i < data.abilita.length; i++)
+            delete Abilita.list[data.abilita[i]];
+
+        for(var i = 0; i < data.dungeon.length; i++)
+            delete Dungeon.list[data.dungeon[i]];
+
+        for(var i = 0; i < data.npc.length; i++)
+            delete NPC.list[data.npc[i]];
+
+        for(var i = 0; i < data.canvasText.length; i++)
+            delete CanvasText.list[data.canvasText[i]];
+    });
+
+    var walk = 0;
+
+
+    //MAIN LOOP
+    setInterval(function(){
+        if(!selfId) return;
+
+        ctx.clearRect(0,0,WIDTH,HEIGHT);
+        
+        var player = Player.list[selfId];
+        var x = WIDTH/2 - player.x,
+            y = HEIGHT/2 - player.y;
+
+
+        mondo.refreshRender({n:1,x:x,y:y,ctx:ctx});
+
+        update_GUI();
+
+        for(var i in Abilita.list)
+            Abilita.list[i].draw();
+        for(var i in Pet.list)
+            Pet.list[i].draw();
+        for(var i in Minion.list)
+            Minion.list[i].draw();
+        for(var i in Player.list)
+            Player.list[i].draw();
+        for(var i in Bullet.list)
+            Bullet.list[i].draw();
+        for(var i in Enemy.list)
+            Enemy.list[i].draw();
+        for(var i in Drop.list)
+            Drop.list[i].draw();
+        for(var i in Dungeon.list)
+            Dungeon.list[i].draw();
+        for(var i in CanvasText.list)
+            CanvasText.list[i].draw();
+
+        mondo.refreshRender({n:2,x:x,y:y,ctx:ctx});
+        
+        for(var i in NPC.list)
+            NPC.list[i].draw();
+
+    },40);
+    
+
+    /*
+    var drawMago = function(){
+        var frameHeight = Img.player.height/Img.player.frH, frameWidth = Img.player.width/Img.player.frW;
+        
+        let walking = Math.floor(walk) % Img.player.frW;
+        //if(walk > 3) walk = 0;
+        ctx.drawImage(Img.player,
+            walking*frameWidth,0,frameWidth,frameHeight,
+            0,0,frameWidth,frameHeight);
+        walk+=0.4;
+    }*/
+
+    document.onkeydown = function(event){
+        if(!writing){
+            if(event.keyCode === 68) //d
+                socket.emit('keyPress', {inputId:"right", state:true});
+            else if(event.keyCode === 83) //s
+                socket.emit('keyPress', {inputId:"down", state:true});
+            else if(event.keyCode === 65) //a
+                socket.emit('keyPress', {inputId:"left", state:true});
+            else if(event.keyCode === 87) //w
+                socket.emit('keyPress', {inputId:"up", state:true});
+        
+            if(event.keyCode === 82) //r => raccogliOggetto
+                socket.emit('keyPress', {inputId:"collectItem", state:true});
+
+            if(event.keyCode === 220){
+                isPing = true;
+                document.getElementById("Ping").style.display = "block";
+            }
+        } 
+    }
+    document.onkeyup = function(event){
+        if(!writing){
+            if(event.keyCode === 68) //d
+                socket.emit('keyPress', {inputId:"right", state:false});
+            else if(event.keyCode === 83) //s
+                socket.emit('keyPress', {inputId:"down", state:false});
+            else if(event.keyCode === 65) //a
+                socket.emit('keyPress', {inputId:"left", state:false});
+            else if(event.keyCode === 87) //w
+                socket.emit('keyPress', {inputId:"up", state:false});
+
+            if(event.keyCode === 82) //r => raccogliOggetto
+                socket.emit('keyPress', {inputId:"collectItem", state:false});
+            
+            if(event.keyCode === 220){
+                isPing = false;
+                document.getElementById("Ping").style.display = "none";
+            }
+        }    
+    }
+    document.onkeypress = function(event){
+        if(!writing){
+            //console.log(event.keyCode)
+
+            if(event.keyCode === 13) 
+                document.getElementById("chat-input").focus();
+
+            if(!openNPC || inventory.clickItems.option == "Magazzino" || !trade.isOpen){
+                if(event.keyCode === 101) //e => openInventory
+                    inventory.open();
+                if(event.keyCode === 103) //g => openStatus
+                    status_pg.open();
+            }
+            if(event.keyCode == 49 && inventory.short_inv[0]) //1 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[0].id, item:inventory.short_inv[0].item});
+            if(event.keyCode == 50 && inventory.short_inv[1]) //2 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[1].id, item:inventory.short_inv[1].item});
+            if(event.keyCode == 51 && inventory.short_inv[2]) //3 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[2].id, item:inventory.short_inv[2].item});
+            if(event.keyCode == 52 && inventory.short_inv[3]) //4 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[3].id, item:inventory.short_inv[3].item});
+            if(event.keyCode == 53 && inventory.short_inv[4]) //5 =>
+                self.socket.emit("useItem_ShortInv", {id:inventory.short_inv[4].id, item:inventory.short_inv[4].item});
+
+            }
+    }
+
+    document.onmousedown = function(event){
+        socket.emit('keyPress', {inputId:"attack", state:true});
+    }
+    document.onmouseup = function(event){
+        socket.emit('keyPress', {inputId:"attack", state:false});
+    }
+    document.onmousemove = function(event){
+        var x = -WIDTH/2 + event.clientX - 8;
+        var y = -HEIGHT/2 + event.clientY - 8;
+        var angle = Math.atan2(y,x) / Math.PI * 180;
+        socket.emit('keyPress', {inputId:"mouseAngle", state:angle});
+        //console.log("mouse: "+x,y);
+    }   
+    document.oncontextmenu = function(event){
+        event.preventDefault();
+    }
+
+    window.addEventListener("resize",function(){resizeCanvas();});
+    resizeCanvas();
+</script>
+
