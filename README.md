@@ -30,4 +30,47 @@ The client is available at the address `` localhost:2000 ``.
 
 You can open multiple `` localhost:2000 `` pages to test also the multiplayer feature!
 
-##Screenshot
+## Commands
+The game provide also some commands (cheats) that are defined in the file `` Server/Comands.js ``. The commands can be executed in-game thought the chat, usign the patter `` /commandName(param1, param2, ...) ``. An example: `` /gold("PlayerName", 100) `` this comand will add 100 gold to the player 'PlayerName'. <br> You can use this command to quikly discover the game features (ability, pet, levels, maps, items...). The command usually refers to an item_id that you can find inside the folder `` json ``. 
+
+## Screenshot
+Here are some screenshot of the game. The screenshot are not exaustive, there are some feature not showed (like the minions, the pet abilities and evolution, the ability system, the bosses, the NPC like the warehouse or the pet helper).
+
+### Register & Login
+![Register](doc/register.png?raw=true)
+
+### First login
+![Forest](doc/first_login.png?raw=true)
+
+### Maps
+![Town](doc/town.png?raw=true)
+![Forest](doc/forest1.png?raw=true)
+![Desert](doc/desert.png?raw=true)
+
+### Dungeon
+![Dungeon](doc/dungeon.png?raw=true)
+![Dungeon boss](doc/dungeon2.png?raw=true)
+
+### Skills & Attacks
+Here is showed only 1 skill, also if there are about 8 skills implemented. To get the skill you need to do the mission 3 that gives you a character transformation stone: you can become magician, knight, summoner... Once you evolve, you can use the cheats to add some skills (see Commands sections).
+![Skill1](doc/skill1.png?raw=true)
+![Skill2](doc/skill2.png?raw=true)
+![Skill Improve](doc/skill_improve.png?raw=true)
+![Attack](doc/forest2.png?raw=true)
+
+### GUI
+![GUI1](doc/status.png?raw=true)
+![Inventory](doc/inventory.png?raw=true)
+![Inventory](doc/mission.png?raw=true)
+![NPC](doc/teleporter.png?raw=true)
+
+### Multiplayer
+![multiplayer](doc/multiplayer.png?raw=true)
+![group](doc/group1.png?raw=true)
+![group2](doc/group2.png?raw=true)
+![trading](doc/trading1.png?raw=true)
+![trading2](doc/trading2.png?raw=true)
+
+### Pet
+![pet](doc/pet.png?raw=true)
+![Pet attack](doc/pet_attack.png?raw=true)
