@@ -66,9 +66,9 @@ Here is showed only 1 skill, also if there are about 8 skills implemented. To ge
 
 ### Multiplayer
 ![multiplayer](doc/multiplayer.png?raw=true)
-![group](doc/group1.png?raw=true)
+![group](doc/group.png?raw=true)
 ![group2](doc/group2.png?raw=true)
-![trading](doc/trading1.png?raw=true)
+![trading](doc/trading.png?raw=true)
 ![trading2](doc/trading2.png?raw=true)
 
 ### Pet
