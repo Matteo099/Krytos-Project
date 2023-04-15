@@ -74,3 +74,6 @@ Here is showed only 1 skill, also if there are about 8 skills implemented. To ge
 ### Pet
 ![pet](doc/pet.png?raw=true)
 ![Pet attack](doc/pet_attack.png?raw=true)
+
+## Arts
+This game uses images taken from the web. I am unsure of the original sources of the images and do not intend to infringe any copyright. If anyone has information on the sources of the images used, please contact me to resolve any copyright issues :pray:.
